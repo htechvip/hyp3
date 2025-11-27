@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-const AIUnderwritingAnalysis = () => {
+const BankAIAgent = () => {
     const [content, setContent] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
         // Load the markdown content
-        fetch('/insights/the-380-billion-opportunity-hiding-in-plain-sight-why-ai-is-finally-unlocking-the-informal-economy.md')
+        fetch('/insights/the-47-million-problem-one-bank-solved-with-ai-agents-and-what-it-means-for-financial-services.md')
             .then(response => response.text())
             .then(text => setContent(text))
             .catch(error => console.error('Error loading article:', error));
@@ -139,7 +139,7 @@ const AIUnderwritingAnalysis = () => {
                         borderRadius: '2px',
                         border: '1px solid #333'
                     }}>
-                        AI in Financial Risk
+                        AI in Financial Services
                     </div>
 
                     {/* Title */}
@@ -151,7 +151,7 @@ const AIUnderwritingAnalysis = () => {
                         marginBottom: '24px',
                         maxWidth: '900px'
                     }}>
-                        {title || 'The Informal Economy Credit Revolution: Strategic Analysis and Implementation Realities'}
+                        {title || 'The $47 Million Problem One Bank Solved With AI Agents—And What It Means For Financial Services'}
                     </h1>
 
                     {/* Meta Info */}
@@ -164,9 +164,9 @@ const AIUnderwritingAnalysis = () => {
                         paddingBottom: '30px',
                         borderBottom: '1px solid #333'
                     }}>
-                        <span>Published: November 27, 2024</span>
+                        <span>Published: December 15, 2024</span>
                         <span>•</span>
-                        <span>15 min read</span>
+                        <span>20 min read</span>
                     </div>
                 </div>
 
@@ -287,7 +287,7 @@ const AIUnderwritingAnalysis = () => {
                                     overflow: 'hidden',
                                     width: '100%',
                                     height: '400px',
-                                    backgroundImage: 'url(/assets/ml.jpg)',
+                                    backgroundImage: 'url(/assets/voice-ai.jpg)',
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
                                     boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)'
@@ -297,8 +297,8 @@ const AIUnderwritingAnalysis = () => {
 
                         {/* Main Sections */}
                         {sections.map((section, index) => {
-                            // Add image after "The Data Sources Revolutionizing Underwriting" section
-                            const shouldShowImage = section.heading === 'The Data Sources Revolutionizing Underwriting';
+                            // Add image after "Where AI Agents Create Real Impact Today" section
+                            const shouldShowImage = section.heading === 'Where AI Agents Create Real Impact Today';
                             
                             return (
                             <React.Fragment key={index}>
@@ -327,7 +327,7 @@ const AIUnderwritingAnalysis = () => {
                                     overflow: 'hidden',
                                     width: '100%',
                                     height: '350px',
-                                    backgroundImage: 'url(/assets/service-1.jpg)',
+                                    backgroundImage: 'url(/assets/service-2.jpg)',
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
                                     boxShadow: '0 8px 24px rgba(0, 0, 0, 0.5)'
@@ -365,55 +365,6 @@ const AIUnderwritingAnalysis = () => {
                         }}>
                             {/* Case Study Card 1 */}
                             <div
-                                onClick={() => navigate('/services/credit-risk')}
-                                style={{
-                                    backgroundColor: '#1a1a1a',
-                                    padding: '30px',
-                                    cursor: 'pointer',
-                                    transition: 'transform 0.2s, box-shadow 0.2s, border-color 0.2s',
-                                    border: '1px solid #333'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(-4px)';
-                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,212,255,0.15)';
-                                    e.currentTarget.style.borderColor = '#00d4ff';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = 'none';
-                                    e.currentTarget.style.borderColor = '#333';
-                                }}
-                            >
-                                <div style={{
-                                    fontSize: '12px',
-                                    fontWeight: '600',
-                                    color: '#00d4ff',
-                                    letterSpacing: '1px',
-                                    textTransform: 'uppercase',
-                                    marginBottom: '16px'
-                                }}>
-                                    Credit Risk & Lending
-                                </div>
-                                <h3 style={{
-                                    fontSize: '20px',
-                                    fontWeight: '600',
-                                    color: '#fff',
-                                    marginBottom: '12px',
-                                    lineHeight: '1.4'
-                                }}>
-                                    AI-Powered Credit Models for Emerging Markets
-                                </h3>
-                                <p style={{
-                                    fontSize: '16px',
-                                    color: '#999',
-                                    lineHeight: '1.6'
-                                }}>
-                                    Developed alternative data underwriting models that expanded credit access while maintaining risk standards.
-                                </p>
-                            </div>
-
-                            {/* Case Study Card 2 */}
-                            <div
                                 onClick={() => navigate('/services/fraud-detection')}
                                 style={{
                                     backgroundColor: '#1a1a1a',
@@ -450,20 +401,20 @@ const AIUnderwritingAnalysis = () => {
                                     marginBottom: '12px',
                                     lineHeight: '1.4'
                                 }}>
-                                    Real-Time Fraud Prevention System
+                                    AI Agent-Powered Fraud Investigation
                                 </h3>
                                 <p style={{
                                     fontSize: '16px',
                                     color: '#999',
                                     lineHeight: '1.6'
                                 }}>
-                                    Implemented ML-based fraud detection reducing false positives by 60% while catching 95% of fraud attempts.
+                                    Deployed autonomous AI agents that reduced fraud investigation time from 23 minutes to 47 seconds, handling 78% of cases end-to-end.
                                 </p>
                             </div>
 
-                            {/* Case Study Card 3 */}
+                            {/* Case Study Card 2 */}
                             <div
-                                onClick={() => navigate('/services/regulatory-compliance')}
+                                onClick={() => navigate('/services/customer-service')}
                                 style={{
                                     backgroundColor: '#1a1a1a',
                                     padding: '30px',
@@ -490,7 +441,7 @@ const AIUnderwritingAnalysis = () => {
                                     textTransform: 'uppercase',
                                     marginBottom: '16px'
                                 }}>
-                                    Regulatory Compliance
+                                    Customer Service
                                 </div>
                                 <h3 style={{
                                     fontSize: '20px',
@@ -499,14 +450,63 @@ const AIUnderwritingAnalysis = () => {
                                     marginBottom: '12px',
                                     lineHeight: '1.4'
                                 }}>
-                                    Explainable AI for Fair Lending Compliance
+                                    Intelligent Customer Service Agents
                                 </h3>
                                 <p style={{
                                     fontSize: '16px',
                                     color: '#999',
                                     lineHeight: '1.6'
                                 }}>
-                                    Built interpretable models meeting regulatory requirements while maintaining predictive performance.
+                                    AI agents that understand context and take action, automating 68% of servicing requests with instant responses.
+                                </p>
+                            </div>
+
+                            {/* Case Study Card 3 */}
+                            <div
+                                onClick={() => navigate('/services/credit-risk')}
+                                style={{
+                                    backgroundColor: '#1a1a1a',
+                                    padding: '30px',
+                                    cursor: 'pointer',
+                                    transition: 'transform 0.2s, box-shadow 0.2s, border-color 0.2s',
+                                    border: '1px solid #333'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-4px)';
+                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,212,255,0.15)';
+                                    e.currentTarget.style.borderColor = '#00d4ff';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = 'none';
+                                    e.currentTarget.style.borderColor = '#333';
+                                }}
+                            >
+                                <div style={{
+                                    fontSize: '12px',
+                                    fontWeight: '600',
+                                    color: '#00d4ff',
+                                    letterSpacing: '1px',
+                                    textTransform: 'uppercase',
+                                    marginBottom: '16px'
+                                }}>
+                                    Loan Processing
+                                </div>
+                                <h3 style={{
+                                    fontSize: '20px',
+                                    fontWeight: '600',
+                                    color: '#fff',
+                                    marginBottom: '12px',
+                                    lineHeight: '1.4'
+                                }}>
+                                    Automated Loan Underwriting Agents
+                                </h3>
+                                <p style={{
+                                    fontSize: '16px',
+                                    color: '#999',
+                                    lineHeight: '1.6'
+                                }}>
+                                    End-to-end loan processing agents that reduced time from application to decision from 5-7 days to 4-6 hours.
                                 </p>
                             </div>
                         </div>
@@ -573,4 +573,5 @@ const AIUnderwritingAnalysis = () => {
     );
 };
 
-export default AIUnderwritingAnalysis;
+export default BankAIAgent;
+

@@ -85,7 +85,7 @@ export const modelsData = [
         id: "recovery-iq",
         title: "RecoveryIQ™ - Loss Severity Prediction Engine",
         shortDescription: "Predicts expected recovery rates and loss severity at time of default, enabling optimized collection strategies.",
-        image: "/assets/models-3.jpg",
+        image: "/assets/modellogo-recoveryiq.png",
         challenge: "Not all defaults are equal. Predicting recovery rates determines optimal collection strategies, accurate loss reserves, and capital requirements.",
         whatItDoes: "Predicts expected recovery rates and loss severity at time of default, enabling optimized collection strategies and accurate financial provisioning.",
         metadata: {
@@ -126,7 +126,7 @@ export const modelsData = [
         id: "shield-ai",
         title: "ShieldAI™ - Intelligent Fraud Prevention",
         shortDescription: "Real-time fraud detection combining anomaly detection, network analysis, and behavioral biometrics.",
-        image: "/assets/service-1.jpg",
+        image: "/assets/modellogo-shieldai.png",
         challenge: "First-party fraud, synthetic identities, and organized fraud rings cost lenders billions annually. Traditional rule-based systems generate 90%+ false positive rates.",
         whatItDoes: "Real-time fraud detection combining anomaly detection, network analysis, and behavioral biometrics to catch fraud while minimizing customer friction.",
         metadata: {
@@ -174,7 +174,7 @@ export const modelsData = [
         id: "decision-engine",
         title: "DecisionEngine™ - Automated Underwriting Intelligence",
         shortDescription: "End-to-end automated underwriting with intelligent routing of complex cases to human underwriters.",
-        image: "/assets/service-2.jpg",
+        image: "/assets/modellogo-decisionengine.png",
         challenge: "Manual underwriting is slow, expensive, inconsistent, and doesn't scale. Yet it's hard to automate because of complexity and compliance requirements.",
         whatItDoes: "End-to-end automated underwriting for straightforward applications, with intelligent routing of complex cases to human underwriters with AI-generated recommendations.",
         metadata: {

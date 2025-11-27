@@ -21,7 +21,19 @@ const Section = ({ title, subtitle, buttonText, image, align = 'left', to, child
                 marginLeft: align === 'right' ? 'auto' : '0'
             }}>
                 {subtitle && <h2 className="section-subtitle">{subtitle}</h2>}
-                <h1 className="section-title">{title}</h1>
+                {to ? (
+                    <h1 
+                        className="section-title" 
+                        onClick={handleClick}
+                        style={{ cursor: 'pointer', transition: 'opacity 0.2s' }}
+                        onMouseEnter={(e) => e.target.style.opacity = '0.8'}
+                        onMouseLeave={(e) => e.target.style.opacity = '1'}
+                    >
+                        {title}
+                    </h1>
+                ) : (
+                    <h1 className="section-title">{title}</h1>
+                )}
                 {children && <div className="section-description" style={{ marginBottom: '30px', fontSize: '18px', lineHeight: '1.6', color: '#fff' }}>{children}</div>}
                 {buttonText && <a href={to || "#"} className="btn" onClick={handleClick}>{buttonText}</a>}
             </div>
