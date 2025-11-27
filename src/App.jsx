@@ -14,6 +14,7 @@ import ClinicalTrials from './pages/research/ClinicalTrials';
 import Insights from './pages/Insights';
 import AIUnderwritingAnalysis from './pages/insights/AIUnderwritingAnalysis';
 import BankAIAgent from './pages/insights/BankAIAgent';
+import FintechVoiceAI from './pages/insights/FintechVoiceAI';
 import Mission from './pages/Mission';
 
 import CreditRisk from './pages/CreditRisk';
@@ -47,6 +48,7 @@ function App() {
         <Route path="/insights" element={<Insights />} />
         <Route path="/insights/the-380-billion-opportunity-hiding-in-plain-sight-why-ai-is-finally-unlocking-the-informal-economy" element={<AIUnderwritingAnalysis />} />
         <Route path="/insights/the-47-million-problem-one-bank-solved-with-ai-agents-and-what-it-means-for-financial-services" element={<BankAIAgent />} />
+        <Route path="/insights/the-fintech-that-deleted-its-phone-menu-and-why-3-million-customers-actually-call-them-now" element={<FintechVoiceAI />} />
         <Route path="/mission" element={<Mission />} />
       </Routes>
     </Router>

@@ -25,6 +25,13 @@ const Insights = () => {
                     image="/assets/ideas-3.jpg"
                     to="/insights/the-380-billion-opportunity-hiding-in-plain-sight-why-ai-is-finally-unlocking-the-informal-economy"
                 />
+                <Section
+                    title="The Fintech That Deleted Its Phone Menu—And Why 3 Million Customers Actually Call Them Now"
+                    subtitle="AI IN CUSTOMER SERVICE"
+                    buttonText="LEARN MORE"
+                    image="/assets/voice-ai.jpg"
+                    to="/insights/the-fintech-that-deleted-its-phone-menu-and-why-3-million-customers-actually-call-them-now"
+                />
             </div>
             <LatestInsights />
             <Footer />
