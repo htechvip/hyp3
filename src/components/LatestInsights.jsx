@@ -1,20 +1,25 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LatestInsights = () => {
+    const navigate = useNavigate();
+    
     const insights = [
         {
-            category: 'AI, Insights, and Solutions',
-            title: 'Defining the Intelligent Enterprise',
-            description: 'A recap from DeepLearning.AI\'s AI Dev 25 • NYC.',
+            category: 'AI IN FINANCIAL SERVICES',
+            title: 'The $47 Million Problem One Bank Solved With AI Agents—And What It Means For Financial Services',
+            description: 'How autonomous AI agents are transforming financial services operations, reducing costs by 40-60% and delivering 10x faster customer experiences.',
             type: 'Article',
-            image: '/assets/insight-1.jpg'
+            image: '/assets/ideas-2.jpg',
+            link: '/insights/the-47-million-problem-one-bank-solved-with-ai-agents-and-what-it-means-for-financial-services'
         },
         {
-            category: 'Digital',
-            title: 'The New Growth Equation for Tech Services',
-            description: 'As AI and geopolitical change upend the status quo, service providers face a stark choice—transform or fall behind.',
-            type: 'Brief',
-            image: '/assets/insight-2.jpg'
+            category: 'FRAUD DETECTION',
+            title: 'The $3.2 Million Deepfake That Fooled A Bank\'s CEO—And Why Every Financial Institution Is Now Vulnerable',
+            description: 'AI-enabled fraud is transforming financial crime. Deepfakes, synthetic identities, and AI-generated attacks are bypassing traditional defenses. Here\'s what every financial institution needs to know.',
+            type: 'Article',
+            image: '/assets/service-2.jpg',
+            link: '/insights/the-3-2-million-deepfake-that-fooled-a-banks-ceo-and-why-every-financial-institution-is-now-vulnerable'
         }
     ];
 
@@ -24,7 +29,12 @@ const LatestInsights = () => {
                 <h2 className="insights-heading">Our Latest Insights</h2>
                 <div className="insights-grid">
                     {insights.map((insight, index) => (
-                        <div key={index} className="insight-card">
+                        <div 
+                            key={index} 
+                            className="insight-card"
+                            onClick={() => insight.link && navigate(insight.link)}
+                            style={insight.link ? { cursor: 'pointer' } : {}}
+                        >
                             <div className="insight-image" style={{ backgroundImage: `url(${insight.image})` }}></div>
                             <div className="insight-content">
                                 <span className="insight-category">{insight.category}</span>
@@ -41,9 +51,6 @@ const LatestInsights = () => {
                             </div>
                         </div>
                     ))}
-                </div>
-                <div className="insights-cta">
-                    <a href="#" className="btn-insights">SEE ALL INSIGHTS</a>
                 </div>
             </div>
         </section>

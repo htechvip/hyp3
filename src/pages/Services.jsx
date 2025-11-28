@@ -27,15 +27,15 @@ const Services = () => {
                 <ServiceOverview />
 
                 <Section
-                    title="AI CONSULTING SERVICES"
+                    title="We help you navigate the complexities of AI in financial services"
                     subtitle="OUR EXPERTISE"
-                    buttonText="GET STARTED"
+                    buttonText=""
                     image="/assets/service-2.jpg"
                 />
                 <Section
-                    title="STRATEGIC AI IMPLEMENTATION"
-                    subtitle="TAILORED SOLUTIONS"
-                    buttonText="LEARN MORE"
+                    title="Our team is at your disposal"
+                    subtitle="AI TALENTS"
+                    buttonText=""
                     image="/assets/service-3.jpg"
                 />
 

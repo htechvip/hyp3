@@ -88,6 +88,62 @@ const articleConfig = {
                 link: '/services/customer-service'
             }
         ]
+    },
+    'the-847-wire-transfer-that-cost-0-03-and-why-2025-is-bankings-stablecoin-reckoning': {
+        category: 'Payments & Transactions',
+        publishedDate: 'February 5, 2025',
+        readTime: '22 min read',
+        heroImage: '/assets/service-1.jpg',
+        sectionImageHeading: 'Where Stablecoins Are Actually Being Used Today',
+        sectionImage: '/assets/service-2.jpg',
+        relatedContent: [
+            {
+                category: 'Payments & Transactions',
+                title: 'Stablecoin Payment Infrastructure',
+                description: 'Built enterprise-grade stablecoin payment systems reducing cross-border transfer costs by 99% and settlement times from days to seconds.',
+                link: '/services/payments-transactions'
+            },
+            {
+                category: 'Digital Banking',
+                title: 'Blockchain-Based Treasury Management',
+                description: 'Implemented stablecoin treasury solutions enabling real-time global payments and 24/7 settlement for corporate clients.',
+                link: '/services/payments-transactions'
+            },
+            {
+                category: 'Trade Finance',
+                title: 'Smart Contract Trade Finance',
+                description: 'Deployed blockchain-based trade finance solutions using stablecoins for instant settlement and automated letter of credit processing.',
+                link: '/services/payments-transactions'
+            }
+        ]
+    },
+    'the-3-2-million-deepfake-that-fooled-a-banks-ceo-and-why-every-financial-institution-is-now-vulnerable': {
+        category: 'Fraud Detection',
+        publishedDate: 'March 12, 2025',
+        readTime: '28 min read',
+        heroImage: '/assets/ml.jpg',
+        sectionImageHeading: 'The Seven Categories of AI-Enabled Fraud Devastating Financial Services',
+        sectionImage: '/assets/service-3.jpg',
+        relatedContent: [
+            {
+                category: 'Fraud Detection',
+                title: 'AI-Powered Fraud Prevention System',
+                description: 'Deployed advanced AI fraud detection that identifies deepfakes, synthetic identities, and AI-generated attacks with 95% accuracy.',
+                link: '/services/fraud-detection'
+            },
+            {
+                category: 'Security',
+                title: 'Real-Time Behavioral Analysis',
+                description: 'Implemented continuous authentication and behavioral biometrics that detect account compromise even when credentials are stolen.',
+                link: '/services/fraud-detection'
+            },
+            {
+                category: 'Risk Management',
+                title: 'Zero Trust Security Architecture',
+                description: 'Built zero-trust systems requiring verification for every transaction, preventing deepfake authentication bypass and account takeover.',
+                link: '/services/risk-management'
+            }
+        ]
     }
 };
 

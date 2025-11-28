@@ -14,6 +14,7 @@ import ClinicalTrials from './pages/research/ClinicalTrials';
 import Insights from './pages/Insights';
 import InsightArticle from './pages/insights/InsightArticle';
 import Mission from './pages/Mission';
+import Contact from './pages/Contact';
 
 import CreditRisk from './pages/CreditRisk';
 import FraudDetection from './pages/FraudDetection';
@@ -46,6 +47,7 @@ function App() {
         <Route path="/insights" element={<Insights />} />
         <Route path="/insights/:slug" element={<InsightArticle />} />
         <Route path="/mission" element={<Mission />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>
   );

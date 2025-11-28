@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Section from '../components/Section';
 import LatestInsights from '../components/LatestInsights';
+import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
 const Insights = () => {
@@ -11,13 +12,6 @@ const Insights = () => {
             <div className="scroll-container">
                 <Header />
                 <HeroSection heroText="INSIGHTS" image="/assets/ideas-1.jpg" buttonText="" />
-                <Section
-                    title="The $47 Million Problem One Bank Solved With AI Agents—And What It Means For Financial Services"
-                    subtitle="AI IN FINANCIAL SERVICES"
-                    buttonText="LEARN MORE"
-                    image="/assets/ideas-2.jpg"
-                    to="/insights/the-47-million-problem-one-bank-solved-with-ai-agents-and-what-it-means-for-financial-services"
-                />
                 <Section
                     title="The $380 Billion Opportunity Hiding In Plain Sight: Why AI Is Finally Unlocking The Informal Economy"
                     subtitle="AI IN FINANCIAL RISK"
@@ -32,8 +26,23 @@ const Insights = () => {
                     image="/assets/voice-ai.jpg"
                     to="/insights/the-fintech-that-deleted-its-phone-menu-and-why-3-million-customers-actually-call-them-now"
                 />
+                <Section
+                    title="The $847 Wire Transfer That Cost $0.03—And Why 2025 Is Banking's Stablecoin Reckoning"
+                    subtitle="PAYMENTS & TRANSACTIONS"
+                    buttonText="LEARN MORE"
+                    image="/assets/service-1.jpg"
+                    to="/insights/the-847-wire-transfer-that-cost-0-03-and-why-2025-is-bankings-stablecoin-reckoning"
+                />
+                <Section
+                    title="The $3.2 Million Deepfake That Fooled A Bank's CEO—And Why Every Financial Institution Is Now Vulnerable"
+                    subtitle="FRAUD DETECTION"
+                    buttonText="LEARN MORE"
+                    image="/assets/service-2.jpg"
+                    to="/insights/the-3-2-million-deepfake-that-fooled-a-banks-ceo-and-why-every-financial-institution-is-now-vulnerable"
+                />
             </div>
             <LatestInsights />
+            <ContactSection />
             <Footer />
         </>
     );
