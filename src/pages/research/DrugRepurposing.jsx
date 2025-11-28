@@ -1,10 +1,17 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 
 const DrugRepurposing = () => {
     return (
         <>
+            <SEO
+                title="AI-Driven Drug Repurposing | Hyperionsoft Research"
+                description="Uncovering hidden therapeutic potential in existing approved medications using AI. Accelerate drug discovery by repurposing approved drugs for new indications."
+                keywords="drug repurposing AI, AI drug discovery, pharmaceutical AI, drug repositioning, AI life sciences"
+                image="/assets/researchdrug-1.jpg"
+            />
             <Header />
             <div className="page-content" style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--color-black)', color: 'var(--color-white)' }}>
                 <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '50px 20px' }}>

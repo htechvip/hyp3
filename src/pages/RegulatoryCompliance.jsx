@@ -2,9 +2,16 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const RegulatoryCompliance = () => (
     <>
+        <SEO
+            title="Regulatory Compliance AI Solutions | Hyperionsoft"
+            description="AI solutions for regulatory compliance in financial services. Fair lending compliance, model risk management, explainable AI, and regulatory reporting automation."
+            keywords="regulatory compliance AI, fair lending compliance, model risk management, explainable AI, regulatory reporting, SR 11-7 compliance"
+            image="/assets/service-3.jpg"
+        />
         <Header />
         <HeroSection
             heroText="Regulatory Compliance"

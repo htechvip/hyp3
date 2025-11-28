@@ -2,9 +2,16 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const PaymentsTransactions = () => (
     <>
+        <SEO
+            title="Payments & Transactions AI Solutions | Hyperionsoft"
+            description="AI solutions for payments and transactions. Real-time payment processing, fraud detection, transaction analytics, and stablecoin payment rails for financial institutions."
+            keywords="payments AI, transaction AI, payment processing AI, stablecoin payments, real-time payments, transaction analytics"
+            image="/assets/service-1.jpg"
+        />
         <Header />
         <HeroSection
             heroText="Payments & Transactions"

@@ -1,10 +1,17 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 
 const DeNovoDesign = () => {
     return (
         <>
+            <SEO
+                title="De Novo Drug Design with AI | Hyperionsoft Research"
+                description="Generative AI creating entirely novel molecules optimized for specific targets. AI-driven de novo drug design for accelerated pharmaceutical discovery."
+                keywords="de novo drug design, generative AI drugs, novel molecule design, AI pharmaceutical design, drug discovery AI"
+                image="/assets/researchdrug-2.jpg"
+            />
             <Header />
             <div className="page-content" style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--color-black)', color: 'var(--color-white)' }}>
                 <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '50px 20px' }}>

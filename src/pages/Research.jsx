@@ -5,10 +5,17 @@ import HeroSection from '../components/HeroSection';
 import Section from '../components/Section';
 import LatestInsights from '../components/LatestInsights';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const Research = () => {
     return (
         <>
+            <SEO
+                title="AI Research in Life Sciences & Drug Discovery | Hyperionsoft"
+                description="Strategic expansion into life sciences. AI-driven drug repurposing, de novo design, molecular prediction, target identification, and clinical trial optimization."
+                keywords="AI drug discovery, drug repurposing AI, de novo drug design, molecular prediction AI, target identification, clinical trial optimization, life sciences AI"
+                image="/assets/researchdrug-1.jpg"
+            />
             <div className="scroll-container">
                 <Header />
                 <HeroSection heroText="RESEARCH" image="/assets/researchdrug-1.jpg?v=2" buttonText="" />

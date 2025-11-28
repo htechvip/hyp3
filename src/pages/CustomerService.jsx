@@ -2,9 +2,16 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const CustomerService = () => (
     <>
+        <SEO
+            title="AI Customer Service Solutions | Hyperionsoft"
+            description="AI-powered customer service solutions including voice AI, chatbots, and intelligent customer support systems for financial institutions."
+            keywords="AI customer service, voice AI, chatbots, customer support AI, conversational AI, intelligent customer service"
+            image="/assets/voice-ai.jpg"
+        />
         <Header />
         <HeroSection
             heroText="Customer Service"

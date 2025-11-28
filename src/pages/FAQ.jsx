@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
@@ -63,8 +64,28 @@ const FAQ = () => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
+    const faqStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.question,
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+            }
+        }))
+    };
+
     return (
         <>
+            <SEO
+                title="FAQ - Working With Hyperionsoft | Frequently Asked Questions"
+                description="Frequently asked questions about working with Hyperionsoft. Learn about our AI advisory process, engagement approach, results, and what to expect from our partnership."
+                keywords="AI consulting FAQ, Hyperionsoft FAQ, AI advisory questions, working with AI consultants, AI implementation FAQ"
+                image="/assets/hero.png"
+                structuredData={faqStructuredData}
+            />
             <div className="scroll-container">
                 <Header />
                 <HeroSection 

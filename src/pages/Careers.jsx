@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const Careers = () => {
     const openRoles = [
@@ -27,8 +28,34 @@ const Careers = () => {
         }
     ];
 
+    const jobPostingStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hyperionsoft",
+        "url": "https://hyperionsoft.com",
+        "logo": "https://hyperionsoft.com/assets/hero.png",
+        "sameAs": [],
+        "jobPosting": openRoles.map(role => ({
+            "@type": "JobPosting",
+            "title": role.title,
+            "description": role.description,
+            "employmentType": "FULL_TIME",
+            "hiringOrganization": {
+                "@type": "Organization",
+                "name": "Hyperionsoft"
+            }
+        }))
+    };
+
     return (
         <>
+            <SEO
+                title="Careers - Join Our AI Team | Hyperionsoft"
+                description="Join Hyperionsoft's team of AI experts. We're hiring data scientists, AI engineers, DevOps engineers, data analysts, and product managers. Build the future of AI in financial services."
+                keywords="AI careers, data scientist jobs, AI engineer jobs, fintech careers, machine learning jobs, AI consulting careers"
+                image="/assets/hero.png"
+                structuredData={jobPostingStructuredData}
+            />
             <div className="scroll-container">
                 <Header />
                 <HeroSection 

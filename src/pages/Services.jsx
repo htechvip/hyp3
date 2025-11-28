@@ -6,11 +6,18 @@ import Section from '../components/Section';
 import LatestInsights from '../components/LatestInsights';
 import Footer from '../components/Footer';
 import ServiceOverview from '../components/ServiceOverview';
+import SEO from '../components/SEO';
 
 
 const Services = () => {
     return (
         <>
+            <SEO
+                title="AI Transformation Services for Financial Institutions | Hyperionsoft"
+                description="Strategic AI advisory and selective implementation for financial services. Credit risk, fraud detection, customer service, regulatory compliance, and risk management solutions."
+                keywords="AI services financial services, AI consulting banks, credit risk AI, fraud detection services, AI customer service, regulatory compliance AI, financial AI advisory"
+                image="/assets/service-1.jpg"
+            />
             <div className="scroll-container">
                 <Header />
                 <HeroSection

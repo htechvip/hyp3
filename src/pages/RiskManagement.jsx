@@ -2,9 +2,16 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const RiskManagement = () => (
     <>
+        <SEO
+            title="Risk Management AI Solutions | Hyperionsoft"
+            description="Enterprise risk management AI solutions. Portfolio risk analytics, stress testing, VaR calculations, and capital allocation optimization for financial institutions."
+            keywords="risk management AI, portfolio risk analytics, stress testing AI, VaR calculations, capital allocation, enterprise risk management"
+            image="/assets/service-1.jpg"
+        />
         <Header />
         <HeroSection
             heroText="Risk Management"

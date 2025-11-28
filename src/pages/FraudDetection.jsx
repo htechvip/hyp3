@@ -2,9 +2,16 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const FraudDetection = () => (
     <>
+        <SEO
+            title="Fraud Detection & AML AI Solutions | Hyperionsoft"
+            description="AI-powered fraud detection and anti-money laundering solutions. Real-time fraud prevention, synthetic identity detection, and AML compliance for financial institutions."
+            keywords="fraud detection AI, AML AI, fraud prevention, synthetic identity detection, real-time fraud detection, anti-money laundering AI"
+            image="/assets/service-2.jpg"
+        />
         <Header />
         <HeroSection
             heroText="Fraud Detection & AML"

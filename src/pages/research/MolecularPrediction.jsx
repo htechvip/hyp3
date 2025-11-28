@@ -1,10 +1,17 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 
 const MolecularPrediction = () => {
     return (
         <>
+            <SEO
+                title="Molecular Property Prediction with AI | Hyperionsoft Research"
+                description="Predicting toxicity and efficacy before a single experiment is run. AI-powered molecular property prediction for faster, safer drug development."
+                keywords="molecular prediction AI, toxicity prediction, drug efficacy prediction, molecular property AI, pharmaceutical AI prediction"
+                image="/assets/researchdrug-3.jpg"
+            />
             <Header />
             <div className="page-content" style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--color-black)', color: 'var(--color-white)' }}>
                 <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '50px 20px' }}>

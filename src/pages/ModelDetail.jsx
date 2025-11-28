@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import { modelsData } from '../data/modelsData';
 
 const ModelDetail = () => {
@@ -25,8 +26,29 @@ const ModelDetail = () => {
         );
     }
 
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": model.title,
+        "description": model.shortDescription,
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    };
+
     return (
         <>
+            <SEO
+                title={`${model.title} | Hyperionsoft`}
+                description={model.shortDescription}
+                keywords={`${model.title}, AI model, financial services AI, machine learning, ${model.id}`}
+                image={model.image}
+                structuredData={structuredData}
+            />
             <Header />
             <div className="model-detail-page" style={{ backgroundColor: 'var(--color-black)', minHeight: '100vh' }}>
                 {/* Hero for the specific model */}

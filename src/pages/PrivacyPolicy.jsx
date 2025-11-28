@@ -2,10 +2,17 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const PrivacyPolicy = () => {
     return (
         <>
+            <SEO
+                title="Privacy Policy | Hyperionsoft"
+                description="Hyperionsoft's privacy policy. Learn how we collect, use, and protect your personal information when you visit our website or use our services."
+                keywords="privacy policy, data protection, GDPR, CCPA, privacy"
+                image="/assets/hero.png"
+            />
             <div className="scroll-container">
                 <Header />
                 <HeroSection 

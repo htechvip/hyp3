@@ -2,9 +2,16 @@ import React from 'react';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const CreditRisk = () => (
     <>
+        <SEO
+            title="Credit Risk & Lending AI Solutions | Hyperionsoft"
+            description="AI-powered credit risk and lending solutions. Advanced credit scoring models, alternative data underwriting, and automated loan decisioning for financial institutions."
+            keywords="credit risk AI, lending AI, credit scoring, alternative data underwriting, loan decisioning AI, credit risk models"
+            image="/assets/service-1.jpg"
+        />
         <Header />
         <HeroSection
             heroText="Credit Risk & Lending"

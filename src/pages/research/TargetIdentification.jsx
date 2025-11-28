@@ -1,10 +1,17 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 
 const TargetIdentification = () => {
     return (
         <>
+            <SEO
+                title="Target Identification with AI | Hyperionsoft Research"
+                description="Validating therapeutic targets with unprecedented precision using genomic data. AI-driven target identification for drug discovery."
+                keywords="target identification AI, therapeutic target validation, genomic AI, drug target discovery, pharmaceutical target AI"
+                image="/assets/target_identification.png"
+            />
             <Header />
             <div className="page-content" style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--color-black)', color: 'var(--color-white)' }}>
                 <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '50px 20px' }}>

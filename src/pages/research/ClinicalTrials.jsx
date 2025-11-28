@@ -1,10 +1,17 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 
 const ClinicalTrials = () => {
     return (
         <>
+            <SEO
+                title="Clinical Trial Optimization with AI | Hyperionsoft Research"
+                description="Optimizing patient recruitment and trial protocols to reduce failure rates. AI-powered clinical trial optimization for faster, more successful drug development."
+                keywords="clinical trial AI, trial optimization, patient recruitment AI, clinical trial design, pharmaceutical trial AI"
+                image="/assets/clinical_trials.png"
+            />
             <Header />
             <div className="page-content" style={{ paddingTop: '100px', minHeight: '100vh', backgroundColor: 'var(--color-black)', color: 'var(--color-white)' }}>
                 <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '50px 20px' }}>

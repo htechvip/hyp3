@@ -5,10 +5,17 @@ import Section from '../components/Section';
 import LatestInsights from '../components/LatestInsights';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const Insights = () => {
     return (
         <>
+            <SEO
+                title="AI Insights & Articles for Financial Services | Hyperionsoft"
+                description="Expert insights on AI in financial services. Articles covering AI fraud detection, credit risk, customer service, payments, and emerging AI technologies in banking."
+                keywords="AI insights financial services, AI articles banking, fintech AI, AI fraud detection, credit risk AI, AI customer service, financial AI trends"
+                image="/assets/ideas-1.jpg"
+            />
             <div className="scroll-container">
                 <Header />
                 <HeroSection heroText="INSIGHTS" image="/assets/ideas-1.jpg" buttonText="" />

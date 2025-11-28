@@ -4,10 +4,33 @@ import HeroSection from '../components/HeroSection';
 import Section from '../components/Section';
 import LatestInsights from '../components/LatestInsights';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 const Home = () => {
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Hyperionsoft",
+        "url": "https://hyperionsoft.com",
+        "logo": "https://hyperionsoft.com/assets/hero.png",
+        "description": "Strategic AI Leadership for Financial Services. Expert AI advisory and implementation for the financial industry.",
+        "sameAs": [],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "rin@hyperionsoft.com",
+            "contactType": "Customer Service"
+        }
+    };
+
     return (
         <>
+            <SEO
+                title="Hyperionsoft - Strategic AI Leadership for Financial Services"
+                description="Transform your financial services organization with expert AI advisory and implementation. We help banks, lenders, and fintech companies deploy production-ready AI models for credit risk, fraud detection, and customer service."
+                keywords="AI consulting, financial services AI, machine learning for banks, credit risk AI, fraud detection AI, fintech AI, AI advisory, financial AI implementation"
+                image="/assets/hero.png"
+                structuredData={structuredData}
+            />
             <div className="scroll-container">
                 <Header />
                 <HeroSection buttonLink="/services" />

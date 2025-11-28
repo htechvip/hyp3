@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import SEO from '../../components/SEO';
 
 // Article configuration
 const articleConfig = {
@@ -230,8 +231,43 @@ const InsightArticle = () => {
 
     const { title, intro, sections } = parseContent(content);
 
+    // Generate SEO description from intro or first paragraph
+    const seoDescription = intro 
+        ? intro.substring(0, 160).replace(/\*\*/g, '').replace(/\*/g, '') + '...'
+        : `${config.category} article by Hyperionsoft. ${title || 'Expert insights on AI in financial services.'}`;
+
+    // Generate article structured data
+    const articleStructuredData = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": title || 'AI Insights Article',
+        "description": seoDescription,
+        "image": config.heroImage,
+        "datePublished": config.publishedDate,
+        "author": {
+            "@type": "Organization",
+            "name": "Hyperionsoft"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Hyperionsoft",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://hyperionsoft.com/assets/hero.png"
+            }
+        }
+    };
+
     return (
         <>
+            <SEO
+                title={`${title || 'AI Insights'} | Hyperionsoft`}
+                description={seoDescription}
+                keywords={`${config.category}, AI financial services, ${title ? title.split(' ').slice(0, 5).join(', ') : 'AI insights'}`}
+                image={config.heroImage}
+                type="article"
+                structuredData={articleStructuredData}
+            />
             <Header />
             <div style={{
                 minHeight: '100vh',

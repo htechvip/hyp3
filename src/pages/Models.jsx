@@ -3,11 +3,18 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import LatestInsights from '../components/LatestInsights';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import { modelsData } from '../data/modelsData';
 
 const Models = () => {
     return (
         <>
+            <SEO
+                title="AI Models for Financial Services - Production-Ready ML Models | Hyperionsoft"
+                description="Purpose-built AI models for lending and risk management. CreditSight, SentinelAI, RecoveryIQ, ShieldAI, DecisionEngine, PortfolioVision, and PricingOptimizer."
+                keywords="AI models financial services, credit risk models, fraud detection models, portfolio risk AI, pricing optimization AI, machine learning models banks"
+                image="/assets/models-1.jpg"
+            />
             <div className="scroll-container">
                 <Header />
                 {/* Intro Hero Section */}
