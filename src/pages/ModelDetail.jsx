@@ -30,20 +30,39 @@ const ModelDetail = () => {
             <Header />
             <div className="model-detail-page" style={{ backgroundColor: 'var(--color-black)', minHeight: '100vh' }}>
                 {/* Hero for the specific model */}
-                <section className="section" style={{ backgroundImage: `url('${model.image}')`, height: '60vh', minHeight: '500px' }}>
-                    <div style={{ padding: '0 50px 100px' }}>
-                        <Link to="/models" style={{ color: 'var(--color-white)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px', fontSize: '14px', textTransform: 'uppercase', letterSpacing: '1px' }}>
+                <div className="model-hero-container">
+                    {/* Image Section - Full width on mobile, fits screen */}
+                    <div 
+                        className={`model-hero-image ${model.id === 'sentinel-ai' ? 'sentinel-ai-image' : ''}`}
+                        style={{
+                            backgroundImage: `url('${model.image}')`
+                        }}
+                    />
+                    
+                    {/* Content Section - Below image on mobile */}
+                    <div className="model-hero-content">
+                        <Link to="/models" style={{ 
+                            color: 'var(--color-white)', 
+                            textDecoration: 'none', 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            gap: '10px', 
+                            marginBottom: '20px', 
+                            fontSize: '14px', 
+                            textTransform: 'uppercase', 
+                            letterSpacing: '1px' 
+                        }}>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M19 12H5M12 19l-7-7 7-7" />
                             </svg>
                             Back to Models
                         </Link>
-                        <h1 className="section-title" style={{ fontSize: '42px' }}>{model.title}</h1>
-                        <p style={{ fontSize: '20px', maxWidth: '800px', lineHeight: '1.6', color: 'rgba(255,255,255,0.9)' }}>
+                        <h1 className="section-title model-hero-title">{model.title}</h1>
+                        <p className="model-hero-description">
                             {model.shortDescription}
                         </p>
                     </div>
-                </section>
+                </div>
 
                 {/* Detailed Content */}
                 <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '80px 50px', color: 'var(--color-white)' }}>

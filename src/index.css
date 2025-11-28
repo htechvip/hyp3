@@ -487,36 +487,40 @@ h6 {
 .service-detail {
   max-width: 900px;
   margin: 0 auto 80px;
+  padding: 0 60px;
 }
 
 .service-detail h2 {
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  margin-top: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .service-detail h3 {
   font-size: 24px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .service-detail h4 {
   font-size: 20px;
-  margin-top: 15px;
-  margin-bottom: 8px;
+  margin-top: 25px;
+  margin-bottom: 15px;
 }
 
 .service-detail ul {
   list-style: disc;
-  margin-left: 20px;
-  margin-bottom: 15px;
+  margin-left: 30px;
+  margin-bottom: 25px;
+  padding-right: 20px;
 }
 
 .service-detail p {
-  line-height: 1.6;
-  margin-bottom: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  padding-right: 20px;
 }
 
 @media (max-width: 768px) {
@@ -538,6 +542,8 @@ h6 {
 
   .service-detail {
     margin-bottom: 60px;
+    padding: 0 30px;
+    max-width: 100%;
   }
 
   .service-detail h2 {
@@ -995,6 +1001,72 @@ h6 {
 }
 
 /* Model Detail Section Styles */
+.model-detail-page {
+  position: relative;
+}
+
+.model-hero-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.model-hero-image {
+  width: 100%;
+  height: 40vh;
+  min-height: 250px;
+  max-height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Specific styling for SentinelAI to prevent cutoff */
+.sentinel-ai-image {
+  background-size: contain !important;
+  background-color: var(--color-black);
+}
+
+.model-hero-content {
+  padding: 40px 20px;
+  background-color: var(--color-black);
+}
+
+.model-hero-title {
+  font-size: clamp(28px, 5vw, 42px);
+  margin-bottom: 20px;
+}
+
+.model-hero-description {
+  font-size: clamp(16px, 2.5vw, 20px);
+  max-width: 800px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .model-hero-container {
+    flex-direction: column;
+  }
+  
+  .model-hero-image {
+    width: 100%;
+    height: 50vh;
+    min-height: 400px;
+    max-height: 500px;
+    position: relative;
+  }
+  
+  .model-hero-content {
+    position: relative;
+    padding: 60px 50px;
+    background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .model-section {
   margin-bottom: 30px;
 }
@@ -1057,6 +1129,69 @@ h6 {
 .research-card-inner:hover {
   transform: translateY(-10px);
   background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Research Page Mobile Styles */
+@media (max-width: 767px) {
+  .research-grid {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    gap: 25px !important;
+  }
+  
+  .research-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .research-card-inner {
+    max-width: 100%;
+  }
+}
+
+/* Models Page Mobile Responsive */
+@media (max-width: 767px) {
+  .models-listing-section {
+    padding: 60px 20px !important;
+  }
+  
+  .models-heading {
+    font-size: clamp(24px, 6vw, 36px) !important;
+    margin-bottom: 40px !important;
+  }
+  
+  .models-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    justify-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .models-grid .insight-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  
+  .models-grid .insight-image {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .models-grid .insight-content {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .models-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  }
 }
 
 /* Mission Statement Section */

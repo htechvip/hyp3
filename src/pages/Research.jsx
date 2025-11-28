@@ -11,7 +11,7 @@ const Research = () => {
         <>
             <div className="scroll-container">
                 <Header />
-                <HeroSection heroText="RESEARCH" image="/assets/researchdrug-1.jpg?v=2" />
+                <HeroSection heroText="RESEARCH" image="/assets/researchdrug-1.jpg?v=2" buttonText="" />
 
 
 
@@ -58,7 +58,7 @@ const Research = () => {
                 <section className="focus-section" style={{ height: 'auto', padding: '100px 50px', display: 'block' }}>
                     <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
                         <h2 className="focus-title" style={{ textAlign: 'center', marginBottom: '60px' }}>Research Focus Areas</h2>
-                        <div className="research-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px' }}>
+                        <div className="research-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '30px', justifyItems: 'center' }}>
 
                             {/* Card 1 */}
                             <Link to="/research/drug-repurposing" className="research-card" style={{ textDecoration: 'none', color: 'inherit' }}>

@@ -217,7 +217,7 @@ export const modelsData = [
         id: "portfolio-vision",
         title: "PortfolioVision™ - Enterprise Risk Analytics Platform",
         shortDescription: "Calculates portfolio-level risk metrics including VaR, Expected Loss, and stress test results.",
-        image: "/assets/service-3.jpg",
+        image: "/assets/modellogo-pv.png",
         challenge: "CFOs and CROs need real-time visibility into portfolio risk across products, segments, and economic scenarios for capital planning and regulatory reporting.",
         whatItDoes: "Calculates portfolio-level risk metrics including VaR, Expected Loss, stress test results, and concentration risks. Powers regulatory reporting and strategic capital allocation.",
         metadata: {
@@ -265,7 +265,7 @@ export const modelsData = [
         id: "pricing-optimizer",
         title: "PricingOptimizer™ - Dynamic Rate Intelligence",
         shortDescription: "Real-time rate optimization balancing credit risk, market competition, and profitability targets.",
-        image: "/assets/ideas-1.jpg",
+        image: "/assets/modellogo-po.png",
         challenge: "Set rates too high and lose volume to competitors. Set them too low and leave profit on the table or attract adverse selection. Static rate sheets can't optimize this tradeoff.",
         whatItDoes: "Real-time rate optimization balancing credit risk, market competition, customer lifetime value, and profitability targets to maximize portfolio returns.",
         metadata: {
