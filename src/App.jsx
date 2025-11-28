@@ -15,6 +15,8 @@ import Insights from './pages/Insights';
 import InsightArticle from './pages/insights/InsightArticle';
 import Mission from './pages/Mission';
 import Contact from './pages/Contact';
+import Careers from './pages/Careers';
+import FAQ from './pages/FAQ';
 
 import CreditRisk from './pages/CreditRisk';
 import FraudDetection from './pages/FraudDetection';
@@ -48,6 +50,8 @@ function App() {
         <Route path="/insights/:slug" element={<InsightArticle />} />
         <Route path="/mission" element={<Mission />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/careers" element={<Careers />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
     </Router>
   );
