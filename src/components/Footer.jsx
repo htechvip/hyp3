@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer-bottom">
-                <span>HYPERIONSOFT © 2025</span>
+                <span>HYPERIONSOFT © {new Date().getFullYear()}</span>
             </div>
         </footer>
     );

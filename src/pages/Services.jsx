@@ -22,7 +22,7 @@ const Services = () => {
                 <Header />
                 <HeroSection
                     heroText="Artificial Intelligence at Your Fingertips"
-                    subtitle="OUR OFFERINGS"
+                    subtitle="FOR FINANCIAL SERVICES"
                     buttonText={null}
                     image="/assets/service-1.jpg"
                 />
