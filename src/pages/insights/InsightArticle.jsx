@@ -151,6 +151,7 @@ const articleConfig = {
 const InsightArticle = () => {
     const { slug } = useParams();
     const [content, setContent] = useState('');
+    const [linkCopied, setLinkCopied] = useState(false);
     const navigate = useNavigate();
     
     const config = articleConfig[slug] || {
@@ -235,6 +236,47 @@ const InsightArticle = () => {
     const seoDescription = intro 
         ? intro.substring(0, 160).replace(/\*\*/g, '').replace(/\*/g, '') + '...'
         : `${config.category} article by Hyperionsoft. ${title || 'Expert insights on AI in financial services.'}`;
+
+    // Get current article URL
+    const articleUrl = typeof window !== 'undefined' 
+        ? `${window.location.origin}/insights/${slug}`
+        : `https://hyperionsoft.com/insights/${slug}`;
+
+    // Share functions
+    const shareOnLinkedIn = () => {
+        const url = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(articleUrl)}`;
+        window.open(url, '_blank', 'width=600,height=400');
+    };
+
+    const shareOnX = () => {
+        const text = encodeURIComponent(title || 'Check out this article');
+        const url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(articleUrl)}&text=${text}`;
+        window.open(url, '_blank', 'width=600,height=400');
+    };
+
+    const copyLink = async () => {
+        try {
+            await navigator.clipboard.writeText(articleUrl);
+            setLinkCopied(true);
+            setTimeout(() => setLinkCopied(false), 2000);
+        } catch (err) {
+            // Fallback for older browsers
+            const textArea = document.createElement('textarea');
+            textArea.value = articleUrl;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                setLinkCopied(true);
+                setTimeout(() => setLinkCopied(false), 2000);
+            } catch (err) {
+                console.error('Failed to copy link:', err);
+            }
+            document.body.removeChild(textArea);
+        }
+    };
 
     // Generate article structured data
     const articleStructuredData = {
@@ -364,84 +406,124 @@ const InsightArticle = () => {
                         marginLeft: '-80px',
                         display: 'flex',
                         flexDirection: 'column',
-                        gap: '12px'
+                        gap: '12px',
+                        zIndex: 10
                     }}>
-                        <button style={{
-                            width: '40px',
-                            height: '40px',
-                            border: '1px solid #333',
-                            background: '#1a1a1a',
-                            color: '#fff',
-                            borderRadius: '50%',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            fontSize: '16px',
-                            transition: 'all 0.2s'
-                        }}
+                        <button 
+                            onClick={shareOnLinkedIn}
+                            style={{
+                                width: '40px',
+                                height: '40px',
+                                border: '1px solid #333',
+                                background: '#1a1a1a',
+                                color: '#fff',
+                                borderRadius: '50%',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '16px',
+                                transition: 'all 0.2s',
+                                fontFamily: 'Arial, sans-serif',
+                                fontWeight: 'bold'
+                            }}
                             onMouseEnter={(e) => {
-                                e.target.style.borderColor = '#00d4ff';
-                                e.target.style.background = '#0a0a0a';
+                                e.target.style.borderColor = '#0077b5';
+                                e.target.style.background = '#0077b5';
                             }}
                             onMouseLeave={(e) => {
                                 e.target.style.borderColor = '#333';
                                 e.target.style.background = '#1a1a1a';
                             }}
-                            title="Share on LinkedIn">
+                            title="Share on LinkedIn"
+                            aria-label="Share on LinkedIn">
                             in
                         </button>
-                        <button style={{
-                            width: '40px',
-                            height: '40px',
-                            border: '1px solid #333',
-                            background: '#1a1a1a',
-                            color: '#fff',
-                            borderRadius: '50%',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            fontSize: '16px',
-                            transition: 'all 0.2s'
-                        }}
+                        <button 
+                            onClick={shareOnX}
+                            style={{
+                                width: '40px',
+                                height: '40px',
+                                border: '1px solid #333',
+                                background: '#1a1a1a',
+                                color: '#fff',
+                                borderRadius: '50%',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '16px',
+                                transition: 'all 0.2s',
+                                fontFamily: 'Arial, sans-serif',
+                                fontWeight: 'bold'
+                            }}
                             onMouseEnter={(e) => {
-                                e.target.style.borderColor = '#00d4ff';
-                                e.target.style.background = '#0a0a0a';
+                                e.target.style.borderColor = '#000';
+                                e.target.style.background = '#000';
                             }}
                             onMouseLeave={(e) => {
                                 e.target.style.borderColor = '#333';
                                 e.target.style.background = '#1a1a1a';
                             }}
-                            title="Share on Twitter">
+                            title="Share on X (Twitter)"
+                            aria-label="Share on X">
                             𝕏
                         </button>
-                        <button style={{
-                            width: '40px',
-                            height: '40px',
-                            border: '1px solid #333',
-                            background: '#1a1a1a',
-                            color: '#fff',
-                            borderRadius: '50%',
-                            cursor: 'pointer',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            fontSize: '16px',
-                            transition: 'all 0.2s'
-                        }}
+                        <button 
+                            onClick={copyLink}
+                            style={{
+                                width: '40px',
+                                height: '40px',
+                                border: linkCopied ? '1px solid #00d4ff' : '1px solid #333',
+                                background: linkCopied ? '#00d4ff' : '#1a1a1a',
+                                color: linkCopied ? '#000' : '#fff',
+                                borderRadius: '50%',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                fontSize: '16px',
+                                transition: 'all 0.2s',
+                                position: 'relative'
+                            }}
                             onMouseEnter={(e) => {
-                                e.target.style.borderColor = '#00d4ff';
-                                e.target.style.background = '#0a0a0a';
+                                if (!linkCopied) {
+                                    e.target.style.borderColor = '#00d4ff';
+                                    e.target.style.background = '#0a0a0a';
+                                }
                             }}
                             onMouseLeave={(e) => {
-                                e.target.style.borderColor = '#333';
-                                e.target.style.background = '#1a1a1a';
+                                if (!linkCopied) {
+                                    e.target.style.borderColor = '#333';
+                                    e.target.style.background = '#1a1a1a';
+                                }
                             }}
-                            title="Copy link">
-                            🔗
+                            title={linkCopied ? "Link copied!" : "Copy link"}
+                            aria-label="Copy link">
+                            {linkCopied ? '✓' : '🔗'}
                         </button>
                     </div>
+                    
+                    {/* Toast notification for copied link */}
+                    {linkCopied && (
+                        <div style={{
+                            position: 'fixed',
+                            bottom: '30px',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            backgroundColor: '#00d4ff',
+                            color: '#000',
+                            padding: '12px 24px',
+                            borderRadius: '4px',
+                            fontSize: '14px',
+                            fontWeight: '600',
+                            zIndex: 1000,
+                            boxShadow: '0 4px 12px rgba(0, 212, 255, 0.3)',
+                            animation: 'fadeIn 0.3s ease-in'
+                        }}>
+                            Link copied to clipboard!
+                        </div>
+                    )}
 
                     {/* Article Body */}
                     <article style={{
