@@ -1411,3 +1411,215 @@ h6 {
 .article-section li {
   margin-bottom: 12px !important;
 }
+
+/* 404 Page Styles */
+.not-found-page {
+  min-height: 100vh;
+  background-color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px 50px;
+  position: relative;
+}
+
+.not-found-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+}
+
+.not-found-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.not-found-content {
+  text-align: center;
+}
+
+.not-found-number {
+  font-size: clamp(120px, 20vw, 200px);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.05);
+  line-height: 1;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  animation: fadeIn 1s ease-in;
+}
+
+.not-found-title {
+  font-size: clamp(32px, 6vw, 48px);
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-in 0.2s backwards;
+}
+
+.not-found-description {
+  font-size: clamp(16px, 3vw, 20px);
+  color: var(--color-gray);
+  line-height: 1.6;
+  margin-bottom: 50px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 1s ease-in 0.4s backwards;
+}
+
+.not-found-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+  animation: fadeInUp 1s ease-in 0.6s backwards;
+}
+
+.btn-not-found {
+  display: inline-block;
+  padding: 15px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-not-found.primary {
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+  background: transparent;
+}
+
+.btn-not-found.primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-white);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btn-not-found.primary:hover::before {
+  left: 0;
+}
+
+.btn-not-found.primary:hover {
+  color: var(--color-black);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.btn-not-found.secondary {
+  border: 2px solid var(--color-gray);
+  color: var(--color-gray);
+  background: transparent;
+}
+
+.btn-not-found.secondary:hover {
+  border-color: var(--color-white);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.not-found-links {
+  margin-top: 60px;
+  animation: fadeInUp 1s ease-in 0.8s backwards;
+}
+
+.not-found-links-title {
+  font-size: 14px;
+  color: var(--color-gray);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.not-found-quick-links {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.quick-link {
+  color: var(--color-gray);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.quick-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-white);
+  transition: width 0.3s ease;
+}
+
+.quick-link:hover {
+  color: var(--color-white);
+}
+
+.quick-link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .not-found-page {
+    padding: 80px 20px 40px;
+  }
+
+  .not-found-number {
+    margin-bottom: 10px;
+  }
+
+  .not-found-title {
+    margin-bottom: 15px;
+  }
+
+  .not-found-description {
+    margin-bottom: 40px;
+  }
+
+  .not-found-actions {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 50px;
+  }
+
+  .btn-not-found {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .not-found-quick-links {
+    gap: 20px;
+  }
+}

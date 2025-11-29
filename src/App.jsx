@@ -18,6 +18,7 @@ import Contact from './pages/Contact';
 import Careers from './pages/Careers';
 import FAQ from './pages/FAQ';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import NotFound from './pages/NotFound';
 
 import CreditRisk from './pages/CreditRisk';
 import FraudDetection from './pages/FraudDetection';
@@ -54,6 +55,7 @@ function App() {
         <Route path="/careers" element={<Careers />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
