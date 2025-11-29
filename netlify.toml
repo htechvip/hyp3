@@ -3,6 +3,16 @@
   publish = "dist"
 
 [[redirects]]
+  from = "/about"
+  to = "/mission"
+  status = 301
+
+[[redirects]]
+  from = "/lenders-digest"
+  to = "/insights"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
