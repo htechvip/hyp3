@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Footer from '../components/Footer';
@@ -94,7 +95,7 @@ const Careers = () => {
                                 maxWidth: '800px',
                                 margin: '0 auto 40px'
                             }}>
-                                At HyperionSoft, we're building the future of AI in financial services. We believe in creating an environment where innovation thrives, where every team member has the opportunity to work on cutting-edge problems, and where our collective expertise drives real transformation for our clients.
+                                At Hyperionsoft, we're building the future of AI in financial services. We believe in creating an environment where innovation thrives, where every team member has the opportunity to work on cutting-edge problems, and where our collective expertise drives real transformation for our clients.
                             </p>
                             <p style={{
                                 fontSize: '18px',
@@ -181,6 +182,60 @@ const Careers = () => {
                             </div>
                         </div>
                     </div>
+                </section>
+
+                {/* Internship Banner */}
+                <section style={{
+                    padding: '40px',
+                    backgroundColor: '#0a0a0a'
+                }}>
+                    <Link to="/careers/internships" style={{ textDecoration: 'none' }}>
+                        <div
+                            style={{
+                                maxWidth: '1200px',
+                                margin: '0 auto',
+                                padding: '32px 40px',
+                                background: 'linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(123, 97, 255, 0.1))',
+                                border: '1px solid rgba(0, 212, 255, 0.3)',
+                                borderRadius: '8px',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                                flexWrap: 'wrap',
+                                gap: '16px',
+                                transition: 'all 0.3s ease'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.borderColor = '#00d4ff';
+                                e.currentTarget.style.transform = 'translateY(-2px)';
+                                e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,212,255,0.15)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.borderColor = 'rgba(0, 212, 255, 0.3)';
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = 'none';
+                            }}
+                        >
+                            <div>
+                                <p style={{ fontSize: '13px', color: '#00d4ff', fontWeight: '600', marginBottom: '6px', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                                    Now Accepting Applications
+                                </p>
+                                <p style={{ fontSize: '22px', color: '#fff', fontWeight: '600' }}>
+                                    Summer 2026 Internship Program
+                                </p>
+                            </div>
+                            <span style={{
+                                padding: '10px 24px',
+                                backgroundColor: '#00d4ff',
+                                color: '#000',
+                                fontSize: '14px',
+                                fontWeight: '600',
+                                borderRadius: '4px'
+                            }}>
+                                Learn More &rarr;
+                            </span>
+                        </div>
+                    </Link>
                 </section>
 
                 {/* Open Roles Section */}

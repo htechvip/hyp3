@@ -16,6 +16,7 @@ import InsightArticle from './pages/insights/InsightArticle';
 import Mission from './pages/Mission';
 import Contact from './pages/Contact';
 import Careers from './pages/Careers';
+import Internships from './pages/Internships';
 import FAQ from './pages/FAQ';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import NotFound from './pages/NotFound';
@@ -53,6 +54,7 @@ function App() {
         <Route path="/mission" element={<Mission />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/careers" element={<Careers />} />
+        <Route path="/careers/internships" element={<Internships />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="*" element={<NotFound />} />
