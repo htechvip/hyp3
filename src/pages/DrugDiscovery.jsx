@@ -456,37 +456,37 @@ const DrugDiscovery = () => {
           <div className="dd-partners-logos">
 
             <div className="dd-partner">
-              <img className="dd-partner-logo" src="https://icon.icepanel.io/Technology/svg/Google-Cloud.svg" alt="Google Cloud" />
+              <img className="dd-partner-logo" src="/assets/partners/google-cloud.svg" alt="Google Cloud" />
               <span className="dd-partner-name">Google Cloud</span>
             </div>
 
             <div className="dd-partner">
-              <img className="dd-partner-logo" src="https://icon.icepanel.io/Technology/svg/AWS.svg" alt="Amazon Web Services" />
+              <img className="dd-partner-logo" src="/assets/partners/aws.svg" alt="Amazon Web Services" />
               <span className="dd-partner-name">Amazon Web Services</span>
             </div>
 
             <div className="dd-partner">
-              <img className="dd-partner-logo" src="https://icon.icepanel.io/Technology/svg/Azure.svg" alt="Microsoft Azure" />
+              <img className="dd-partner-logo" src="/assets/partners/azure.svg" alt="Microsoft Azure" />
               <span className="dd-partner-name">Microsoft Azure</span>
             </div>
 
             <div className="dd-partner">
-              <img className="dd-partner-logo" src="https://cdn.simpleicons.org/nvidia/76B900" alt="Nvidia" />
+              <img className="dd-partner-logo" src="/assets/partners/nvidia.svg" alt="Nvidia" />
               <span className="dd-partner-name">Nvidia</span>
             </div>
 
             <div className="dd-partner">
-              <img className="dd-partner-logo" src="https://cdn.prod.website-files.com/66450aa390462a415cd93051/66450aa390462a415cd930a2_logo--default.svg" alt="CoreWeave" />
+              <img className="dd-partner-logo" src="/assets/partners/cw.png" alt="CoreWeave" />
               <span className="dd-partner-name">CoreWeave</span>
             </div>
 
             <div className="dd-partner">
-              <img className="dd-partner-logo" src="https://cdn.simpleicons.org/databricks/FF3621" alt="Databricks" />
+              <img className="dd-partner-logo" src="/assets/partners/databricks.svg" alt="Databricks" />
               <span className="dd-partner-name">Databricks</span>
             </div>
 
             <div className="dd-partner">
-              <img className="dd-partner-logo" src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face" />
+              <img className="dd-partner-logo" src="/assets/partners/huggingface.svg" alt="Hugging Face" />
               <span className="dd-partner-name">Hugging Face</span>
             </div>
 
@@ -543,6 +543,22 @@ const DrugDiscovery = () => {
               <p className="dd-form-subtitle">Complete the form to download the PDF immediately.</p>
               <LeadForm />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── USC Affiliation ── */}
+      <section className="dd-usc">
+        <div className="dd-usc-inner">
+          <div className="dd-usc-logo-wrap">
+            <img src="/assets/optimized_backup/USCPharmacy.jpg" alt="USC Alfred E. Mann School of Pharmacy and Pharmaceutical Sciences" className="dd-usc-logo" />
+          </div>
+          <div className="dd-usc-text">
+            <span className="dd-section-tag">Academic Affiliation</span>
+            <h2 className="dd-section-title">Affiliated with USC Alfred E. Mann School of Pharmacy</h2>
+            <p className="dd-usc-body">
+            Cho-Nan Tsai, Founder and CEO of Hyperionsoft, serves as Adjunct Professor at the USC Alfred E. Mann School of Pharmacy and Pharmaceutical Sciences. His appointment reflects both active engagement with pharmaceutical science research and a commitment to translating academic rigor into production-ready AI systems for drug discovery.
+            </p>
           </div>
         </div>
       </section>
