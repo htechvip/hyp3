@@ -44,7 +44,7 @@ const Header = () => {
       <nav className={`nav-links ${menuOpen ? 'active' : ''}`}>
         <Link to="/models" className="nav-link" onClick={closeMenu}>Models</Link>
         <Link to="/services" className="nav-link" onClick={closeMenu}>Services</Link>
-        <Link to="/drug-discovery" className="nav-link nav-link-highlight" onClick={closeMenu}>Drug Discovery</Link>
+        <Link to="/drug-discovery" className="nav-link" onClick={closeMenu}>Drug Discovery</Link>
         <div className={`nav-item-with-dropdown ${dropdownOpen ? 'active' : ''}`}>
           <a href="#" className="nav-link" onClick={toggleDropdown}>Company</a>
           <div className="dropdown-menu">

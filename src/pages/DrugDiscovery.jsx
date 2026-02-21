@@ -449,6 +449,51 @@ const DrugDiscovery = () => {
         </div>
       </section>
 
+      {/* ── Technology Partners ── */}
+      <section className="dd-partners">
+        <div className="dd-partners-inner">
+          <p className="dd-partners-eyebrow">Technology Partners</p>
+          <div className="dd-partners-logos">
+
+            <div className="dd-partner">
+              <img className="dd-partner-logo" src="https://icon.icepanel.io/Technology/svg/Google-Cloud.svg" alt="Google Cloud" />
+              <span className="dd-partner-name">Google Cloud</span>
+            </div>
+
+            <div className="dd-partner">
+              <img className="dd-partner-logo" src="https://icon.icepanel.io/Technology/svg/AWS.svg" alt="Amazon Web Services" />
+              <span className="dd-partner-name">Amazon Web Services</span>
+            </div>
+
+            <div className="dd-partner">
+              <img className="dd-partner-logo" src="https://icon.icepanel.io/Technology/svg/Azure.svg" alt="Microsoft Azure" />
+              <span className="dd-partner-name">Microsoft Azure</span>
+            </div>
+
+            <div className="dd-partner">
+              <img className="dd-partner-logo" src="https://cdn.simpleicons.org/nvidia/76B900" alt="Nvidia" />
+              <span className="dd-partner-name">Nvidia</span>
+            </div>
+
+            <div className="dd-partner">
+              <img className="dd-partner-logo" src="https://cdn.prod.website-files.com/66450aa390462a415cd93051/66450aa390462a415cd930a2_logo--default.svg" alt="CoreWeave" />
+              <span className="dd-partner-name">CoreWeave</span>
+            </div>
+
+            <div className="dd-partner">
+              <img className="dd-partner-logo" src="https://cdn.simpleicons.org/databricks/FF3621" alt="Databricks" />
+              <span className="dd-partner-name">Databricks</span>
+            </div>
+
+            <div className="dd-partner">
+              <img className="dd-partner-logo" src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="Hugging Face" />
+              <span className="dd-partner-name">Hugging Face</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* ── Interactive Molecular Visualization ── */}
       <section className="dd-mol-section">
         <div className="dd-mol-inner">
@@ -509,7 +554,7 @@ const DrugDiscovery = () => {
           <p className="dd-cta-sub">
             Book a 30-minute discovery call with our computational biology team.
           </p>
-          <Link to="/contact" className="btn-dd">Schedule a Discovery Call</Link>
+          <a href="https://calendly.com/chonantsai/30min" target="_blank" rel="noopener noreferrer" className="btn-dd">Schedule a Discovery Call</a>
         </div>
       </section>
 
