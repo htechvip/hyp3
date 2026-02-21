@@ -417,6 +417,27 @@ const DrugDiscovery = () => {
         </div>
       </section>
 
+      {/* ── 3D Protein ── */}
+      <section className="dd-protein">
+        <div className="dd-protein-inner">
+          <div className="dd-protein-text">
+            <span className="dd-section-tag">Molecular Intelligence</span>
+            <h2 className="dd-protein-statement">
+              Every atom<br />matters.<br />
+              Every bond<br />accelerates<br />
+              the cure.
+            </h2>
+          </div>
+          <div className="dd-protein-canvas-wrap">
+            <img
+              src="/assets/protein-dark.jpg"
+              alt="3D protein structure"
+              className="dd-protein-gif"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ── Process / Methodology ── */}
       <section className="dd-process">
         <div className="dd-process-inner">
@@ -461,7 +482,7 @@ const DrugDiscovery = () => {
             </div>
 
             <div className="dd-partner">
-              <img className="dd-partner-logo" src="/assets/partners/aws.svg" alt="Amazon Web Services" />
+              <img className="dd-partner-logo" src="/assets/partners/aws.png" alt="Amazon Web Services" />
               <span className="dd-partner-name">Amazon Web Services</span>
             </div>
 
