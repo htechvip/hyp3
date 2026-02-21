@@ -114,6 +114,8 @@ const MolecularCanvas = () => {
 /* ─── Lead Form ─────────────────────────────────────────────────────── */
 const LeadForm = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [form, setForm] = useState({ name: '', email: '', company: '', role: '' });
   const [errors, setErrors] = useState({});
 
@@ -125,11 +127,25 @@ const LeadForm = () => {
     return e;
   };
 
-  const handleSubmit = (ev) => {
+  const handleSubmit = async (ev) => {
     ev.preventDefault();
     const e = validate();
     if (Object.keys(e).length) { setErrors(e); return; }
-    setSubmitted(true);
+    setSubmitting(true);
+    setSubmitError('');
+    try {
+      const res = await fetch('/.netlify/functions/submit-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error('Server error');
+      setSubmitted(true);
+    } catch {
+      setSubmitError('Something went wrong. Please try again or email us directly.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -204,9 +220,10 @@ const LeadForm = () => {
           </select>
         </div>
       </div>
-      <button type="submit" className="btn-dd" style={{ width: '100%', marginTop: '10px' }}>
-        Download Capabilities Brief
+      <button type="submit" className="btn-dd" style={{ width: '100%', marginTop: '10px' }} disabled={submitting}>
+        {submitting ? 'Sending…' : 'Download Capabilities Brief'}
       </button>
+      {submitError && <p className="dd-form-error" style={{ marginTop: '8px' }}>{submitError}</p>}
       <p className="dd-form-disclaimer">
         We respect your privacy. No spam, ever.
       </p>
@@ -251,18 +268,18 @@ const DrugDiscovery = () => {
     },
     {
       number: '03',
-      title: 'Clinical Trial Optimization',
-      tag: 'Development',
+      title: 'De Novo Drug Design',
+      tag: 'Generation',
       description:
-        'Predictive analytics and patient stratification models maximize trial success probability by identifying optimal patient populations, predicting dropout risk, and optimizing dosing regimens before first-in-human studies.',
+        'Our proprietary generative platform designs novel drug candidates from scratch—no template molecule required. Constrained by target geometry, ADMET profiles, and synthesizability, it explores chemical space no human chemist has charted.',
       capabilities: [
-        'Patient stratification and cohort design',
-        'Dropout and non-compliance prediction',
-        'Adaptive trial design simulation',
-        'Biomarker-driven dose optimization',
-        'Real-world evidence integration',
+        'Structure-based generative design (diffusion models)',
+        'Fragment-based & scaffold-free generation',
+        'Multi-objective optimization (potency, selectivity, toxicity)',
+        'Synthesizability scoring and route suggestion',
+        'Automated virtual screening of generated libraries',
       ],
-      outcomes: '35% improvement in Phase II success rates',
+      outcomes: '50× larger explored chemical space per cycle',
     },
   ];
 
@@ -271,7 +288,7 @@ const DrugDiscovery = () => {
     { label: 'Data Audit & Prep', detail: 'Assess and harmonize proprietary data: assay results, genomic datasets, clinical records. Build feature pipelines and data governance frameworks.' },
     { label: 'Model Development', detail: 'Train and validate task-specific models—GNNs for target scoring, generative diffusion models for molecule design, survival models for trial endpoints.' },
     { label: 'Experimental Integration', detail: 'Close the loop between computation and wet-lab. Prioritized hits feed directly into synthesis queues; results retrain models in an active learning cycle.' },
-    { label: 'Regulatory Package', detail: 'Prepare model documentation, uncertainty quantification reports, and audit trails suitable for IND submissions and FDA engagement.' },
+    { label: 'Candidate Handoff', detail: 'Deliver a fully documented lead candidate package—synthesis routes, predicted ADMET profiles, selectivity data, and model uncertainty reports ready for your preclinical team.' },
     { label: 'Deployment & Scale', detail: 'Move validated models into production APIs your scientists use daily—integrated with ELN, LIMS, and pipeline management systems.' },
   ];
 
@@ -279,8 +296,8 @@ const DrugDiscovery = () => {
     <>
       <SEO
         title="AI Drug Discovery | Hyperionsoft"
-        description="Accelerate drug discovery with AI. Target identification, molecular design, and clinical trial optimization powered by state-of-the-art machine learning."
-        keywords="AI drug discovery, molecular design AI, target identification AI, clinical trial optimization, computational drug discovery, generative chemistry"
+        description="Accelerate drug discovery with AI and machine learning. Target identification, molecular design, and de novo drug design powered by Hyperionsoft's proprietary platform."
+        keywords="AI drug discovery, de novo drug design, molecular design AI, target identification AI, computational drug discovery, generative chemistry, drug discovery platform"
         image="/assets/drug-discovery-hero.jpg"
       />
       <Header />
@@ -292,14 +309,15 @@ const DrugDiscovery = () => {
         </div>
         <div className="dd-hero-overlay" />
         <div className="dd-hero-content">
-          <span className="dd-hero-tag">Drug Discovery × AI</span>
-          <h1 className="dd-hero-title">Compress the<br />Drug Discovery<br />Timeline</h1>
+          <span className="dd-hero-tag">Proprietary Platform · AI · Machine Learning · Data</span>
+          <h1 className="dd-hero-title">AI-Powered<br />Drug Discovery.<br />Built Different.</h1>
           <p className="dd-hero-subtitle">
-            From target identification to IND filing—we apply state-of-the-art machine learning
-            at every stage of the discovery pipeline, turning years of iteration into months.
+            We bring AI, machine learning, and data management together in a proprietary platform
+            engineered to compress the drug discovery timeline—from target identification
+            to lead candidate, faster than any conventional approach.
           </p>
           <div className="dd-hero-actions">
-            <a href="#pillars" className="btn-dd">Explore Our Approach</a>
+            <a href="#pillars" className="btn-dd">Explore Our Platform</a>
             <a href="#capabilities" className="btn-dd btn-dd-outline">Get Capabilities Brief</a>
           </div>
           <div className="dd-hero-stats">
@@ -309,13 +327,13 @@ const DrugDiscovery = () => {
             </div>
             <div className="dd-stat-divider" />
             <div className="dd-stat">
-              <span className="dd-stat-number">60%</span>
-              <span className="dd-stat-label">Reduction in Target Validation Time</span>
+              <span className="dd-stat-number">50×</span>
+              <span className="dd-stat-label">Larger Chemical Space Explored</span>
             </div>
             <div className="dd-stat-divider" />
             <div className="dd-stat">
-              <span className="dd-stat-number">35%</span>
-              <span className="dd-stat-label">Higher Phase II Success Rate</span>
+              <span className="dd-stat-number">60%</span>
+              <span className="dd-stat-label">Reduction in Target Validation Time</span>
             </div>
           </div>
         </div>
