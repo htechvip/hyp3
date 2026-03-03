@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection = ({
-    heroText = 'Strategic AI Leadership for Financial Services',
-    subtitle = 'ARTIFICIAL INTELLIGENCE',
+    heroText = 'Strategic AI Consulting for Financial Services & Drug Discovery',
+    subtitle = 'ARTIFICIAL INTELLIGENCE CONSULTING',
     buttonText = 'EXPLORE',
     image = '/assets/hero.png',
     buttonLink
