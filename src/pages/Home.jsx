@@ -49,7 +49,7 @@ const Home = () => {
                     to="/insights/the-fintech-that-deleted-its-phone-menu-and-why-3-million-customers-actually-call-them-now"
                 />
                 <Section
-                    title="Accelerating Drug Discovery with AI: From Target Identification to Clinical Trials"
+                    title="Accelerating Drug Discovery with AI"
                     subtitle="AI IN DRUG DISCOVERY"
                     buttonText="EXPLORE RESEARCH"
                     image="/assets/protein-dark.jpg"
