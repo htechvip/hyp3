@@ -112,12 +112,12 @@ const WhitepaperForm = () => {
     setSubmitting(true);
     setSubmitError('');
     try {
-      await fetch('***REMOVED***BNE3KM0/B0AK2AGN2UT/UrknKs1y9a0E8QHht9EMRGAe', {
+      const res = await fetch('/.netlify/functions/submit-admet-lead', {
         method: 'POST',
-        mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text: `New ADMET white paper download: ${email}` }),
+        body: JSON.stringify({ email }),
       });
+      if (!res.ok) throw new Error('Server error');
       setSubmitted(true);
     } catch {
       setSubmitError('Something went wrong. Please try again or email us directly.');
