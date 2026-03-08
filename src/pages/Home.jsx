@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import Section from '../components/Section';
@@ -56,6 +57,26 @@ const Home = () => {
                     to="/research"
                 />
             </div>
+            {/* ── White Paper Promo ── */}
+            <div className="home-wp-banner">
+                <div className="home-wp-banner-inner">
+                    <div className="home-wp-banner-text">
+                        <span className="home-wp-tag">New Research</span>
+                        <h2 className="home-wp-title">
+                            A Deep Learning Framework for Multi-Endpoint ADMET Compliance in Molecular Generation
+                        </h2>
+                        <p className="home-wp-body">
+                            Our latest white paper presents a unified deep learning architecture that simultaneously predicts and enforces ADMET compliance during molecular generation—eliminating late-stage drug failures before a compound ever enters the lab.
+                        </p>
+                    </div>
+                    <div className="home-wp-banner-cta">
+                        <Link to="/deep-learning-molecule-generation" className="btn-dd">
+                            Read the White Paper
+                        </Link>
+                    </div>
+                </div>
+            </div>
+
             <LatestInsights />
             <Footer />
         </>
