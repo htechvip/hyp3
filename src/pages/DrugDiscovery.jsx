@@ -317,7 +317,7 @@ const DrugDiscovery = () => {
             to lead candidate, faster than any conventional approach.
           </p>
           <div className="dd-hero-actions">
-            <a href="#pillars" className="btn-dd">Explore Our Platform</a>
+            <Link to="/reforge" className="btn-dd">Explore Our Platform</Link>
             <a href="#capabilities" className="btn-dd btn-dd-outline">Get Capabilities Brief</a>
           </div>
           <div className="dd-hero-stats">
