@@ -29,6 +29,7 @@ import RiskManagement from './pages/RiskManagement';
 import PaymentsTransactions from './pages/PaymentsTransactions';
 import DrugDiscovery from './pages/DrugDiscovery';
 import DeepLearningMoleculeGeneration from './pages/DeepLearningMoleculeGeneration';
+import ReForge from './pages/ReForge';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/services/payments-transactions" element={<PaymentsTransactions />} />
         <Route path="/drug-discovery" element={<DrugDiscovery />} />
         <Route path="/deep-learning-molecule-generation" element={<DeepLearningMoleculeGeneration />} />
+        <Route path="/reforge" element={<ReForge />} />
         <Route path="/models" element={<Models />} />
         <Route path="/models/:id" element={<ModelDetail />} />
         <Route path="/research" element={<Research />} />
