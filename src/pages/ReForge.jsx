@@ -14,14 +14,51 @@ const CANDIDATES = [
   { score: '0.77', feas: 'red', label: 'Quinoline', top: false },
 ];
 
-const MOL_RINGS = [
-  { pts: [[10,20],[26,14],[42,20],[42,36],[26,42],[10,36]], color: '#ff4444' },
-  { pts: [[12,16],[26,10],[40,16],[38,32],[12,32]], color: '#ff6b6b' },
-  { pts: [[10,20],[22,10],[38,14],[38,30],[10,30]], color: '#ff8888' },
-  { pts: [[10,20],[26,14],[42,20],[42,36],[26,42],[10,36]], color: '#ff4444', dashed: true },
-  { pts: [[14,18],[28,12],[40,20],[36,34],[14,34]], color: '#ff6060' },
-  { pts: [[8,16],[24,10],[42,16],[44,32],[24,40],[8,32]], color: '#ff5050', dashed: true },
-];
+/* ── Realistic heterocycle SVG renderer (viewBox 0 0 52 52) ──────── */
+function MolSVG({ index }) {
+  const c = '#ff4444';
+  const sw = 1.5;
+  switch (index) {
+    case 0: return (<> {/* Pyridine — flat-top 6-membered ring, N at upper-right vertex */}
+      <polygon points="19,14 33,14 40,26 33,38 19,38 12,26" fill="none" stroke={c} strokeWidth={sw}/>
+      <circle cx="26" cy="26" r="6" fill="none" stroke={c} strokeWidth="0.7" opacity="0.4"/>
+      <text x="34" y="12" fill={c} fontSize="11" fontFamily="monospace" textAnchor="middle">N</text>
+    </>);
+    case 1: return (<> {/* Imidazole — 5-membered ring, NH at 1, N at 3; double bonds C2=N3 and C4=C5 */}
+      <polygon points="26,13 38,22 33,38 19,38 14,22" fill="none" stroke={c} strokeWidth={sw}/>
+      <line x1="27" y1="16" x2="35" y2="23" stroke={c} strokeWidth="1" opacity="0.7"/>
+      <line x1="21" y1="36" x2="31" y2="36" stroke={c} strokeWidth="1" opacity="0.7"/>
+      <text x="10" y="21" fill={c} fontSize="8.5" fontFamily="monospace" textAnchor="middle">NH</text>
+      <text x="42" y="21" fill={c} fontSize="11" fontFamily="monospace" textAnchor="middle">N</text>
+    </>);
+    case 2: return (<> {/* Thiophene — 5-membered ring, S at top; double bonds C2=C3 and C4=C5 */}
+      <polygon points="26,15 38,24 33,40 19,40 14,24" fill="none" stroke={c} strokeWidth={sw}/>
+      <line x1="35" y1="25" x2="32" y2="37" stroke={c} strokeWidth="1" opacity="0.7"/>
+      <line x1="20" y1="37" x2="17" y2="25" stroke={c} strokeWidth="1" opacity="0.7"/>
+      <text x="26" y="12" fill={c} fontSize="11" fontFamily="monospace" textAnchor="middle">S</text>
+    </>);
+    case 3: return (<> {/* Oxazole — 5-membered ring, O at 1, N at 3; double bonds C2=N3 and C4=C5 */}
+      <polygon points="26,13 38,22 33,38 19,38 14,22" fill="none" stroke={c} strokeWidth={sw}/>
+      <line x1="27" y1="16" x2="35" y2="23" stroke={c} strokeWidth="1" opacity="0.7"/>
+      <line x1="21" y1="36" x2="31" y2="36" stroke={c} strokeWidth="1" opacity="0.7"/>
+      <text x="10" y="21" fill={c} fontSize="11" fontFamily="monospace" textAnchor="middle">O</text>
+      <text x="42" y="21" fill={c} fontSize="11" fontFamily="monospace" textAnchor="middle">N</text>
+    </>);
+    case 4: return (<> {/* Pyrimidine — flat-top 6-membered ring, N at positions 1 and 3 */}
+      <polygon points="19,14 33,14 40,26 33,38 19,38 12,26" fill="none" stroke={c} strokeWidth={sw}/>
+      <circle cx="26" cy="26" r="6" fill="none" stroke={c} strokeWidth="0.7" opacity="0.4"/>
+      <text x="19" y="12" fill={c} fontSize="10" fontFamily="monospace" textAnchor="middle">N</text>
+      <text x="33" y="12" fill={c} fontSize="10" fontFamily="monospace" textAnchor="middle">N</text>
+    </>);
+    default: return (<> {/* Quinoline — fused benzene + pyridine bicyclic with aromatic circles */}
+      <polygon points="8,19 17,12 27,19 27,34 17,41 8,34" fill="none" stroke={c} strokeWidth={sw}/>
+      <circle cx="17" cy="27" r="4.5" fill="none" stroke={c} strokeWidth="0.7" opacity="0.4"/>
+      <polygon points="27,19 37,12 45,19 45,34 37,41 27,34" fill="none" stroke={c} strokeWidth={sw}/>
+      <circle cx="36" cy="27" r="4.5" fill="none" stroke={c} strokeWidth="0.7" opacity="0.4"/>
+      <text x="37" y="11" fill={c} fontSize="10" fontFamily="monospace" textAnchor="middle">N</text>
+    </>);
+  }
+}
 
 /* ── Process steps ────────────────────────────────────────────── */
 const STEPS = [
@@ -190,7 +227,7 @@ function StepViz({ stepIndex }) {
           <div key={i} style={{ border: `1px solid ${c.top ? 'rgba(255,68,68,0.4)' : 'rgba(255,255,255,0.06)'}`, background: 'rgba(255,255,255,0.02)', padding: '10px 8px', textAlign: 'center' }}>
             <div style={{ fontSize: 9, color: 'rgba(255,255,255,0.25)', letterSpacing: 1, marginBottom: 4 }}>#{i + 1}</div>
             <svg width="40" height="40" viewBox="0 0 52 52" style={{ display: 'block', margin: '0 auto 4px' }}>
-              <polygon points={MOL_RINGS[i].pts.map(p => p.join(',')).join(' ')} fill="none" stroke={MOL_RINGS[i].color} strokeWidth="1.5" strokeDasharray={MOL_RINGS[i].dashed ? '3,1.5' : undefined}/>
+              <MolSVG index={i}/>
             </svg>
             <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: '#ff4444' }}>{c.score}</div>
             <div style={{ fontSize: 8, color: 'rgba(255,255,255,0.4)', marginTop: 2 }}>{c.label}</div>
@@ -505,20 +542,39 @@ export default function ReForge() {
                 <div style={{ display: 'flex', justifyContent: 'center', padding: '16px 12px', border: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.02)', marginBottom: 14, position: 'relative' }}>
                   <span style={{ position: 'absolute', top: 6, left: 10, fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, color: 'rgba(255,255,255,0.25)' }}>Lead</span>
                   <svg width="220" height="90" viewBox="0 0 220 90">
+                    {/* p-Tolyl (4-methylphenyl) ring — aromatic */}
                     <polygon points="55,20 75,20 85,37 75,54 55,54 45,37" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
-                    <text x="60" y="40" fill="rgba(255,255,255,0.5)" fontSize="9" fontFamily="monospace">Ph</text>
-                    <line x1="85" y1="37" x2="105" y2="37" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
-                    <text x="100" y="33" fill="rgba(255,255,255,0.5)" fontSize="9" fontFamily="monospace">N</text>
-                    <line x1="107" y1="37" x2="127" y2="27" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
-                    <line x1="127" y1="27" x2="147" y2="37" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
-                    <line x1="147" y1="37" x2="147" y2="54" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
-                    <rect x="148" y="20" width="62" height="44" rx="2" fill="rgba(255,68,68,0.08)" stroke="rgba(255,68,68,0.5)" strokeWidth="1" strokeDasharray="3,2"/>
-                    <polygon points="155,28 168,23 181,28 181,46 168,51 155,46" fill="none" stroke="#ff4444" strokeWidth="1.5"/>
-                    <text x="161" y="40" fill="#ff4444" fontSize="8" fontFamily="monospace">OH</text>
-                    <line x1="181" y1="37" x2="196" y2="37" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
-                    <text x="193" y="34" fill="rgba(255,255,255,0.4)" fontSize="8" fontFamily="monospace">F</text>
-                    <text x="149" y="18" fill="#ff4444" fontSize="8" fontFamily="monospace" fontWeight="bold">selected</text>
+                    <circle cx="65" cy="37" r="8" fill="none" stroke="rgba(255,255,255,0.28)" strokeWidth="0.8"/>
+                    <line x1="65" y1="20" x2="65" y2="13" stroke="rgba(255,255,255,0.38)" strokeWidth="1.2"/>
+                    <text x="65" y="10" fill="rgba(255,255,255,0.45)" fontSize="10" fontFamily="monospace" textAnchor="middle">Me</text>
+                    {/* Amide linkage: –NH–C(=O)– */}
+                    <line x1="85" y1="37" x2="100" y2="37" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
+                    <text x="101" y="34" fill="rgba(255,255,255,0.55)" fontSize="11" fontFamily="monospace">N</text>
+                    <text x="110" y="32" fill="rgba(255,255,255,0.35)" fontSize="9" fontFamily="monospace">H</text>
+                    <line x1="116" y1="37" x2="127" y2="27" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
+                    {/* C=O double bond branching upward */}
+                    <line x1="127" y1="27" x2="121" y2="16" stroke="rgba(255,255,255,0.42)" strokeWidth="1.3"/>
+                    <line x1="130" y1="28" x2="124" y2="17" stroke="rgba(255,255,255,0.42)" strokeWidth="1.3"/>
+                    <text x="117" y="13" fill="rgba(255,255,255,0.45)" fontSize="10" fontFamily="monospace">O</text>
+                    {/* Bond C to selected ring */}
+                    <line x1="127" y1="27" x2="148" y2="37" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5"/>
+                    {/* Selection highlight box */}
+                    <rect x="149" y="19" width="63" height="46" rx="2" fill="rgba(255,68,68,0.08)" stroke="rgba(255,68,68,0.5)" strokeWidth="1" strokeDasharray="3,2"/>
+                    {/* Phenol ring (selected fragment) — aromatic */}
+                    <polygon points="156,28 169,23 182,28 182,46 169,51 156,46" fill="none" stroke="#ff4444" strokeWidth="1.5"/>
+                    <circle cx="169" cy="37" r="5.5" fill="none" stroke="#ff4444" strokeWidth="0.7" opacity="0.45"/>
+                    {/* OH at top vertex, F at right */}
+                    <line x1="169" y1="23" x2="169" y2="15" stroke="#ff4444" strokeWidth="1.2"/>
+                    <text x="169" y="12" fill="#ff4444" fontSize="11" fontFamily="monospace" textAnchor="middle">OH</text>
+                    <line x1="182" y1="37" x2="197" y2="37" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5"/>
+                    <text x="200" y="41" fill="rgba(255,255,255,0.35)" fontSize="10" fontFamily="monospace">F</text>
+                    <text x="150" y="19" fill="#ff4444" fontSize="9" fontFamily="monospace" fontWeight="bold">selected</text>
                   </svg>
+                  {/* Compound name and SMILES */}
+                  <div style={{ marginTop: 10, paddingTop: 10, borderTop: '1px solid rgba(255,255,255,0.06)', width: '100%' }}>
+                    <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 11, color: 'rgba(255,255,255,0.75)', fontWeight: 600, letterSpacing: 0.5, marginBottom: 4 }}>HPIOS-4221</div>
+                    <div style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 9, color: '#8b939b', wordBreak: 'break-all', lineHeight: 1.5 }}>CC1=CC=C(C=C1)NC(=O)c2ccc(O)c(F)c2</div>
+                  </div>
                 </div>
                 {/* Constraints row */}
                 <div style={{ display: 'flex', gap: 8, marginBottom: 14 }}>
@@ -538,8 +594,7 @@ export default function ReForge() {
                     <div key={i} className="rf-mol-card" style={{ border: `1px solid ${c.top ? 'rgba(255,68,68,0.35)' : 'rgba(255,255,255,0.06)'}`, background: 'rgba(255,255,255,0.02)', padding: '10px 8px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, cursor: 'pointer', transition: 'border-color 0.2s, background 0.2s', position: 'relative' }}>
                       <span style={{ position: 'absolute', top: 4, left: 6, fontSize: 8, fontWeight: 700, color: 'rgba(255,255,255,0.25)', letterSpacing: 1 }}>#{i + 1}</span>
                       <svg width="52" height="52" viewBox="0 0 52 52">
-                        <line x1="4" y1="26" x2="10" y2="26" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5"/>
-                        <polygon points={MOL_RINGS[i].pts.map(p => p.join(',')).join(' ')} fill="none" stroke={MOL_RINGS[i].color} strokeWidth="1.5" strokeDasharray={MOL_RINGS[i].dashed ? '3,1.5' : undefined}/>
+                        <MolSVG index={i}/>
                         {c.top && <circle cx="26" cy="26" r="22" fill="none" stroke="rgba(255,68,68,0.15)" strokeWidth="0.5"/>}
                       </svg>
                       <span style={{ fontFamily: "'IBM Plex Mono', monospace", fontSize: 10, color: '#ff4444', fontWeight: 600 }}>{c.score}</span>
