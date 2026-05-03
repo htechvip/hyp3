@@ -63,7 +63,7 @@ function App() {
         <Route path="/careers/internships" element={<Internships />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="*" element={<NotFound />} />
+<Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );

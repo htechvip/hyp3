@@ -1,10 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import * as Sentry from '@sentry/react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 
 const NotFound = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        Sentry.captureMessage(`404 - Page not found: ${location.pathname}`, 'warning');
+    }, [location.pathname]);
+
     return (
         <>
             <SEO
