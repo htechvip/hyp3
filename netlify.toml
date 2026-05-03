@@ -20,5 +20,10 @@
   to = "/index.html"
   status = 200
 
+[[plugins]]
+  package = "@sentry/netlify-build-plugin"
+  [plugins.inputs]
+    setCommits = false
+
 
 
