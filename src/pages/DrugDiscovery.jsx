@@ -311,13 +311,8 @@ const DrugDiscovery = () => {
         <div className="dd-hero-content">
           <span className="dd-hero-tag">Proprietary Platform · AI · Machine Learning · Data</span>
           <h1 className="dd-hero-title">AI-Powered<br />Drug Discovery.<br />Built Different.</h1>
-          <p className="dd-hero-subtitle">
-            We bring AI, machine learning, and data management together in a proprietary platform
-            engineered to compress the drug discovery timeline—from target identification
-            to lead candidate, faster than any conventional approach.
-          </p>
           <div className="dd-hero-actions">
-            <Link to="/reforge" className="btn-dd">Explore Our Platform</Link>
+            <a href="https://reforgex.ai" target="_blank" rel="noopener noreferrer" className="btn-dd">Explore Our Platform</a>
             <a href="#capabilities" className="btn-dd btn-dd-outline">Get Capabilities Brief</a>
           </div>
           <div className="dd-hero-stats">

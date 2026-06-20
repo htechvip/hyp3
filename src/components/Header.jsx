@@ -45,6 +45,7 @@ const Header = () => {
         <Link to="/models" className="nav-link" onClick={closeMenu}>Models</Link>
         <Link to="/services" className="nav-link" onClick={closeMenu}>Services</Link>
         <Link to="/drug-discovery" className="nav-link" onClick={closeMenu}>Drug Discovery</Link>
+        <a href="https://reforgex.ai" className="nav-link" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>ReForgeX</a>
         <div className={`nav-item-with-dropdown ${dropdownOpen ? 'active' : ''}`}>
           <a href="#" className="nav-link" onClick={toggleDropdown}>Company</a>
           <div className="dropdown-menu">
