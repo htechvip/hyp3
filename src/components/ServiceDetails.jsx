@@ -184,14 +184,16 @@ const ServiceDetails = () => (
         <div className="service-detail" id="regulatory-compliance">
             <h2>Regulatory Compliance</h2>
             <h3>Overview</h3>
-            <p>Automate compliance monitoring and reporting while ensuring AI models themselves meet regulatory standards—reducing risk and operational costs.</p>
+            <p>Automate compliance monitoring and reporting while ensuring AI models and the systems around them meet regulatory and audit standards—reducing risk and operational costs for financial services and healthcare technology organizations alike.</p>
             <h3>Key Challenges We Address</h3>
             <ul>
-                <li>Manual compliance reviews consuming significant resources</li>
+                <li>Manual compliance reviews and audit prep consuming significant resources</li>
                 <li>Difficulty keeping pace with regulatory changes</li>
                 <li>Lack of explainability in AI decision‑making</li>
                 <li>Model risk management requirements</li>
                 <li>Fair lending and bias concerns in AI models</li>
+                <li>Protected health information (PHI) handling and de‑identification requirements</li>
+                <li>SOC 1 / SOC 2 control design and evidence collection ahead of an audit</li>
                 <li>Audit trail and documentation gaps</li>
             </ul>
             <h3>Our Approach</h3>
@@ -200,6 +202,8 @@ const ServiceDetails = () => (
                 <li>AI governance framework design</li>
                 <li>Model risk management program development</li>
                 <li>Regulatory readiness assessment for AI initiatives</li>
+                <li>SOC 2 Trust Services Criteria gap assessment and readiness roadmap</li>
+                <li>HIPAA Privacy and Security Rule risk assessments</li>
                 <li>Compliance automation roadmap</li>
                 <li>Regulatory engagement strategy and documentation</li>
             </ul>
@@ -208,6 +212,8 @@ const ServiceDetails = () => (
                 <li>Automated compliance monitoring systems</li>
                 <li>Model explainability and documentation platforms</li>
                 <li>Fair lending analysis and bias testing</li>
+                <li>PHI de‑identification and access‑control tooling</li>
+                <li>Continuous control monitoring for SOC 1 / SOC 2 evidence collection</li>
                 <li>Regulatory reporting automation</li>
                 <li>Audit trail and lineage tracking</li>
                 <li>Ongoing model performance monitoring</li>
@@ -219,6 +225,8 @@ const ServiceDetails = () => (
                 <li>Model documentation generation</li>
                 <li>Automated regulatory report creation</li>
                 <li>Compliance rule engines</li>
+                <li>Automated evidence collection for SOC 1 / SOC 2 audits</li>
+                <li>PHI detection, redaction, and de‑identification pipelines</li>
                 <li>Change detection and alert systems</li>
             </ul>
             <h3>Regulatory Frameworks</h3>
@@ -227,19 +235,23 @@ const ServiceDetails = () => (
                 <li>Fair lending (ECOA, FCRA, disparate impact analysis)</li>
                 <li>Consumer protection (CFPB guidance)</li>
                 <li>Banking regulations (OCC, Fed, FDIC)</li>
+                <li>SOC 1 (SSAE 18 / ISAE 3402) for service organizations supporting financial reporting</li>
+                <li>SOC 2 Type I and Type II (AICPA Trust Services Criteria)</li>
+                <li>HIPAA (Privacy Rule, Security Rule, HITECH) for healthcare technology and PHI handling</li>
                 <li>International standards (EU AI Act, GDPR considerations)</li>
-                <li>Industry best practices (Model Risk Management)</li>
+                <li>Industry best practices (Model Risk Management, HITRUST CSF)</li>
             </ul>
             <h3>Typical Outcomes</h3>
             <ul>
                 <li>45‑65% reduction in compliance review time</li>
                 <li>80‑90% faster regulatory reporting</li>
-                <li>Zero findings in regulatory AI model audits</li>
+                <li>Zero findings in regulatory AI model audits and SOC 1 / SOC 2 examinations</li>
                 <li>30‑50% reduction in compliance‑related operational costs</li>
                 <li>Enhanced regulatory relationships through proactive transparency</li>
             </ul>
-            <h3>Case Example</h3>
+            <h3>Case Examples</h3>
             <p>Tier 1 bank: Built comprehensive model governance platform managing 40+ AI models across enterprise. Automated compliance documentation reduced audit preparation time by 60%. First AI credit model to receive full regulatory approval without remediation requirements.</p>
+            <p>Healthcare technology platform: Implemented continuous control monitoring and PHI de‑identification pipelines ahead of a SOC 2 Type II examination. Reduced audit evidence collection time by 70% and achieved a clean SOC 2 report alongside HIPAA Security Rule compliance on first attempt.</p>
         </div>
         {/* Risk Management */}
         <div className="service-detail" id="risk-management">
@@ -352,6 +364,68 @@ const ServiceDetails = () => (
             </ul>
             <h3>Case Example</h3>
             <p>E‑commerce platform: Implemented intelligent payment routing reducing failure rates by 28% and processing costs by 18%. Authorization optimization decreased false declines by 21%, recovering $4M in annual revenue. System processes 2M+ daily transactions across 15 payment processors.</p>
+        </div>
+        {/* Virtual CISO */}
+        <div className="service-detail" id="virtual-ciso">
+            <h2>Virtual CISO</h2>
+            <h3>Overview</h3>
+            <p>Get executive‑level security leadership without the cost of a full‑time hire. Our virtual CISO service gives financial services and healthcare technology companies a dedicated security strategist who builds the program, drives audits to a clean result, and represents security to your board, customers, and regulators.</p>
+            <h3>Key Challenges We Address</h3>
+            <ul>
+                <li>No dedicated security leadership to own strategy and accountability</li>
+                <li>Security debt accumulating faster than internal teams can address it</li>
+                <li>Customer and partner due‑diligence questionnaires stalling deals</li>
+                <li>Upcoming SOC 2, HIPAA, or ISO 27001 audits with no clear owner</li>
+                <li>Board and investor pressure for a credible security narrative</li>
+                <li>Incident response plans that are untested or nonexistent</li>
+            </ul>
+            <h3>Our Approach</h3>
+            <h4>Strategic Advisory</h4>
+            <ul>
+                <li>Security program strategy and roadmap development</li>
+                <li>Risk assessment and risk register ownership</li>
+                <li>Board and executive security reporting</li>
+                <li>Vendor and third‑party risk management program design</li>
+                <li>Security budget planning and resourcing recommendations</li>
+            </ul>
+            <h4>Selective Implementation</h4>
+            <ul>
+                <li>Security policy and procedure documentation</li>
+                <li>Audit readiness and evidence collection for SOC 1, SOC 2, and HIPAA</li>
+                <li>Incident response plan development and tabletop exercises</li>
+                <li>Access control, identity, and vendor risk reviews</li>
+                <li>Security awareness training programs</li>
+                <li>Continuous control monitoring implementation</li>
+            </ul>
+            <h3>Capabilities</h3>
+            <ul>
+                <li>Fractional executive security leadership (part‑time or interim)</li>
+                <li>Customer and prospect security questionnaire response</li>
+                <li>Penetration test and vulnerability scan program oversight</li>
+                <li>Data privacy and PHI/PII handling guidance</li>
+                <li>Cloud security architecture review</li>
+                <li>Regulator and auditor liaison</li>
+            </ul>
+            <h3>Frameworks &amp; Standards</h3>
+            <ul>
+                <li>SOC 1 (SSAE 18 / ISAE 3402) and SOC 2 Type I/II (AICPA Trust Services Criteria)</li>
+                <li>HIPAA Privacy, Security, and Breach Notification Rules</li>
+                <li>ISO 27001 / 27701</li>
+                <li>NIST Cybersecurity Framework and NIST 800‑53</li>
+                <li>PCI DSS for payment data environments</li>
+                <li>HITRUST CSF for healthcare technology organizations</li>
+            </ul>
+            <h3>Typical Outcomes</h3>
+            <ul>
+                <li>Clean first‑attempt SOC 2 Type II and HIPAA assessments</li>
+                <li>50‑70% faster response to customer security questionnaires</li>
+                <li>Board‑ready security reporting within the first 90 days</li>
+                <li>Documented, tested incident response plan within one quarter</li>
+                <li>Materially shorter enterprise sales cycles once certifications land</li>
+            </ul>
+            <h3>Case Examples</h3>
+            <p>Camino Financial (Series A fintech lender): Engaged a vCISO during a period of hypergrowth, scaling the company from 4 to 200 employees in a short period of time. Built a cybersecurity program from the ground up alongside the headcount growth and completed a SOC 1 examination to support institutional and banking partners.</p>
+            <p>Fintech lender: A planned bank partnership made SOC 2 certification a condition of the deal. Stood up the control environment, ran the audit process, and delivered a completed SOC 2 report on time and within budget, clearing the way for the partnership to close.</p>
         </div>
     </section>
 );

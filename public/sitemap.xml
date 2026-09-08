@@ -61,7 +61,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
+
+  <url>
+    <loc>https://hyperionsoft.com/services/virtual-ciso</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Models -->
   <url>
     <loc>https://hyperionsoft.com/models</loc>

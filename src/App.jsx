@@ -27,6 +27,7 @@ import CustomerService from './pages/CustomerService';
 import RegulatoryCompliance from './pages/RegulatoryCompliance';
 import RiskManagement from './pages/RiskManagement';
 import PaymentsTransactions from './pages/PaymentsTransactions';
+import VirtualCISO from './pages/VirtualCISO';
 import DrugDiscovery from './pages/DrugDiscovery';
 import DeepLearningMoleculeGeneration from './pages/DeepLearningMoleculeGeneration';
 import ReForge from './pages/ReForge';
@@ -44,6 +45,7 @@ function App() {
         <Route path="/services/regulatory-compliance" element={<RegulatoryCompliance />} />
         <Route path="/services/risk-management" element={<RiskManagement />} />
         <Route path="/services/payments-transactions" element={<PaymentsTransactions />} />
+        <Route path="/services/virtual-ciso" element={<VirtualCISO />} />
         <Route path="/drug-discovery" element={<DrugDiscovery />} />
         <Route path="/deep-learning-molecule-generation" element={<DeepLearningMoleculeGeneration />} />
         <Route path="/reforge" element={<ReForge />} />

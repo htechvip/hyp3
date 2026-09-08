@@ -8,6 +8,7 @@ const services = [
     { title: 'Regulatory Compliance', image: '/assets/hero.png', path: '/services/regulatory-compliance' },
     { title: 'Risk Management', image: '/assets/open.jpg', path: '/services/risk-management' },
     { title: 'Payments & Transactions', image: '/assets/voice-ai.jpg', path: '/services/payments-transactions' },
+    { title: 'Virtual CISO', image: '/assets/models-1.jpg', path: '/services/virtual-ciso' },
 ];
 
 const ServiceOverview = () => (
